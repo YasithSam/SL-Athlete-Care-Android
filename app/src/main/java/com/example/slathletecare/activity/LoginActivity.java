@@ -1,17 +1,17 @@
-package com.example.slathletecare;
+package com.example.slathletecare.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
 import android.os.Bundle;
 
-public class LoginActivity extends AppCompatActivity {
+import com.example.slathletecare.R;
 
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
     }
 }
