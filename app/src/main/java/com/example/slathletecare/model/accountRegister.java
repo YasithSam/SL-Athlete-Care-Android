@@ -7,10 +7,15 @@ public class accountRegister implements Serializable {
     private String password;
     private String phone;
 
-    public accountRegister(String username, String phone, String password) {
+
+
+    private String otp;
+
+    public accountRegister(String username, String phone, String password,String otp) {
         this.username = username;
         this.phone = phone;
         this.password = password;
+        this.otp=otp;
     }
 
     public String getUsername() {
@@ -35,6 +40,13 @@ public class accountRegister implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getOtp() {
+        return otp;
+    }
+
+    public void setOtp(String otp) {
+        this.otp = otp;
     }
 
 
