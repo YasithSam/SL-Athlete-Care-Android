@@ -126,24 +126,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/roboto"
-                android:text="Hi, what's up Hasan?"
-                android:textColor="#000000"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="match_parent"/>
     </FrameLayout>
 
     <EditText

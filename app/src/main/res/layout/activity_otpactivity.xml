@@ -87,6 +87,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/bottom_background_blue"
+            android:fontFamily="sans-serif"
             android:onClick="callNextScreenFromOTP"
             android:text="@string/verify_code"
             android:textColor="@color/white"
