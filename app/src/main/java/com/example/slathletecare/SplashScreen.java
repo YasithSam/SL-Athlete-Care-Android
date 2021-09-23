@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.slathletecare.activity.InjuryActivity;
 import com.example.slathletecare.activity.IntroActivity;
 import com.example.slathletecare.activity.LoginActivity;
 import com.example.slathletecare.activity.SignUpActivity;
@@ -26,7 +27,7 @@ public class SplashScreen extends AppCompatActivity {
 
             public void run() {
 
-                Intent i = new Intent(SplashScreen.this, IntroActivity.class);
+                Intent i = new Intent(SplashScreen.this, InjuryActivity.class);
 
                 startActivity(i);
 
