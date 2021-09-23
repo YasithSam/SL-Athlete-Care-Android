@@ -3,6 +3,7 @@ package com.example.slathletecare;
 import android.os.Bundle;
 
 import com.example.slathletecare.R;
+import com.example.slathletecare.helper.SessionManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import com.example.slathletecare.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
