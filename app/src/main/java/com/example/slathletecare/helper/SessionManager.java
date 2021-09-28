@@ -44,8 +44,6 @@ public class SessionManager {
         // Storing name in pref
         editor.putString(username, name);
 
-
-
         // commit changes
         editor.commit();
     }
