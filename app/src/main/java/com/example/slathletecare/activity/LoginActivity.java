@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     private String username;
     private String password;
     private TextView btnForget;
+    TextView click;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
