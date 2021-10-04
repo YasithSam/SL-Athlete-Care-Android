@@ -51,8 +51,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.MyViewHo
         Articles a= aList.get(position);
         holder.heading.setText(a.getHeader());
         holder.desc.setText(a.getDesc());
-        holder.likes.setText(a.getLikes());
-        holder.comments.setText(a.getComments());
+        holder.likes.setText(Integer.toString(a.getLikes()));
+        holder.comments.setText(Integer.toString(a.getComments()));
 
     }
 
