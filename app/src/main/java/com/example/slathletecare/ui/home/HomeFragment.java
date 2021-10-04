@@ -30,9 +30,6 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
-    private RecyclerView recyclerView;
-    private ArticleAdapter mAdapter;
-    private List<Articles> aList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -41,33 +38,10 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        recyclerView = (RecyclerView) root.findViewById(R.id.rv_a);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
 
-        mAdapter = new ArticleAdapter(aList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
-        prepareData();
         return root;
     }
 
-    private void prepareData() {
-        Articles data = new Articles("How to overcome leg injuries", "There are few things that are very importatnt ....", 23,2);
-        aList.add(data);
-
-        data= new Articles("Best place to buy a knee cap", "My coach advised me to go for health care in rajagiriya ....", 34,1);
-        aList.add(data);
-
-        data= new Articles("Best place to buy a knee cap", "My coach advised me to go for health care in rajagiriya ....", 34,1);
-        aList.add(data);
-
-        data= new Articles("Best place to buy a knee cap", "My coach advised me to go for health care in rajagiriya ....", 34,1);
-        aList.add(data);
-
-        mAdapter.notifyDataSetChanged();
-    }
 
 
     @Override
