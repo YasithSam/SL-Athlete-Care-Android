@@ -66,7 +66,7 @@ public class NotificationsFragment extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
 
-        new AsyncChat().execute();
+
         return root;
     }
     private class AsyncChat extends AsyncTask<String,String,String> {
