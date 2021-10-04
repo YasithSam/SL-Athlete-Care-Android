@@ -3,7 +3,7 @@ package com.example.slathletecare.app;
 public class AppConfig {
 
     //Server base url
-    public static String URL_BASE = "http://192.168.8.143/SL-athlete-care/api/v1";
+    public static String URL_BASE = "http://192.168.8.107/SL-athlete-care/api/v1";
 
     // Server user register url
     public static String URL_REGISTER = URL_BASE+"/SignUp.php";
