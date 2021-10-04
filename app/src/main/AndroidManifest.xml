@@ -13,7 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SLAthleteCare"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.InjuryActivity"></activity>
+        <activity android:name=".activity.PollAllActivity"></activity>
+        <activity android:name=".activity.QuestionAllActivity" />
+        <activity android:name=".activity.ItemAllActivity" />
+        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".activity.InjuryActivity" />
         <activity android:name=".ForgetPassword" />
         <activity android:name=".OTPActivity" />
         <activity
