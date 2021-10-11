@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.slathletecare.R;
 
-public class PollAllActivity extends AppCompatActivity {
+public class ArticleOneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poll_all);
+        setContentView(R.layout.activity_article_one);
     }
 }
