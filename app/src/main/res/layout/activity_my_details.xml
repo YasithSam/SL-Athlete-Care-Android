@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contentBodyColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            style="@style/viewParent.headerText"
+            android:text="Profile" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCircleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/imageBorderColor"
+                android:src="@drawable/user_dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/uname"
+                style="@style/viewParent.headerText"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/profileCircleImageView"
+                android:text="Mahesh Theekshana"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/sport1"
+                style="@style/viewParent.headerText"
+                android:layout_below="@id/uname"
+                android:layout_toRightOf="@id/profileCircleImageView"
+                android:text="Cricketer"
+                android:textColor="#5D5C5C"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="Health Details" />
+
+        <TextView
+            android:id="@+id/textViewG"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:text="My Health" />
+
+        <TextView
+            android:id="@+id/textView50"
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Details" />
+
+        <TextView
+            android:id="@+id/full_name"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:text="Maheesh Theekshana" />
+
+        <TextView
+            android:id="@+id/email_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="mahesh1999@gmail.com" />
+
+        <TextView
+            android:id="@+id/nic_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="199901920v" />
+
+        <TextView
+            android:id="@+id/sex_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="Male" />
+
+        <TextView
+            android:id="@+id/address_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="Not Specified" />
+
+        <TextView
+            android:id="@+id/age_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="21" />
+
+        <TextView
+            android:id="@+id/city_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="Colombo" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="Responsible Person Email" />
+
+        <TextView
+            android:id="@+id/r_email_p"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="nimalperera@gmail.com" />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="Sports Details" />
+
+        <TextView
+            android:id="@+id/textViewG3"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:text="My Sports" />
+
+
+    </LinearLayout>
+</ScrollView>
