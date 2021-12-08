@@ -36,7 +36,7 @@
             android:id="@+id/linearLayout11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="32dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    app:srcCompat="@drawable/intro" />
+                    app:srcCompat="@drawable/mental" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -75,7 +75,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto"
                         android:maxLines="1"
-                        android:text="Clara Menard"
+                        android:text="My article 1"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -86,7 +86,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto"
                         android:maxLines="1"
-                        android:text="Hi, what's up Hasan?"
+                        android:text="Description ........"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -96,6 +96,13 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView23"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -151,7 +158,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto"
                         android:maxLines="1"
-                        android:text="Clara Menard"
+                        android:text="My article 2"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -162,7 +169,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto"
                         android:maxLines="1"
-                        android:text="Hi, what's up Hasan?"
+                        android:text="Description ......."
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -172,6 +179,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -229,7 +242,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto"
                         android:maxLines="1"
-                        android:text="Clara Menard"
+                        android:text="My article 3"
                         android:textColor="#000000"
                         android:textSize="18sp" />
 
@@ -241,7 +254,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/roboto"
                         android:maxLines="1"
-                        android:text="Hi, what's up Hasan?"
+                        android:text="Description ......"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -251,6 +264,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
 
                     <ImageView
                         android:id="@+id/imageView8"
