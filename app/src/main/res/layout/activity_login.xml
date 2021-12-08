@@ -93,14 +93,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tvForget" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView101"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:clickable="true"
         android:fontFamily="@font/roboto"
         android:text="Don't Have An Account? Signup"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="@+id/btnSignIn"
