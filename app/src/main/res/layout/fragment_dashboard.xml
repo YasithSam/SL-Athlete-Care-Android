@@ -21,11 +21,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
             android:clickable="true"
-            app:backgroundTint="@color/primary" />
+            android:src="@drawable/ic_baseline_notifications_24"
+            app:backgroundTint="@color/contentBodyColor" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileCircleImageView"
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/name"
+            android:text="Mahesh Theekshana"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:gravity="center_horizontal"
-            android:text="@string/sport"
+            android:text="Username"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -82,31 +82,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="@string/current"
+                android:text="Report Injury"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvInjuryName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/injury_name"
-                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/btnInjury"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Injury" />
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="Report Injury"
+                app:backgroundTint="@color/dark" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -118,15 +116,96 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cc5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:cardCornerRadius="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:text="My Profile"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/schedules" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cc6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    app:cardCornerRadius="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="5dp"
+                            android:paddingRight="5dp"
+                            android:text="Forum"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/settings" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     app:cardCornerRadius="6dp">
 
                     <LinearLayout
@@ -152,16 +231,19 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="25dp"
                             android:layout_weight="1"
-                            tools:src="@drawable/profile" />
+                            android:src="@drawable/cs" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cc2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     app:cardCornerRadius="6dp">
 
                     <LinearLayout
@@ -186,7 +268,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            tools:src="@drawable/profile" />
+                            android:src="@drawable/articles" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -194,17 +276,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="147dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cc3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     app:cardCornerRadius="6dp">
 
                     <LinearLayout
@@ -227,18 +312,21 @@
                         <ImageView
                             android:id="@+id/imageView3"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:layout_weight="1"
-                            tools:src="@tools:sample/avatars" />
+                            android:src="@drawable/schedules" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cc4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     app:cardCornerRadius="6dp">
 
                     <LinearLayout
@@ -261,9 +349,9 @@
                         <ImageView
                             android:id="@+id/imageView5"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="150dp"
                             android:layout_weight="1"
-                            tools:src="@tools:sample/avatars" />
+                            android:src="@drawable/settings" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
