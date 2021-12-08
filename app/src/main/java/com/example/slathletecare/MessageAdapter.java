@@ -47,6 +47,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
         Conversation c= conversationList.get(position);
         holder.fromUser.setText(c.getFromUser());
         holder.topMessage.setText(c.getTopMessage());
+    
 
     }
 
