@@ -27,9 +27,9 @@ public class SessionManager {
 
     private static final String IS_LOGIN = "isLoggedIn";
 
-    public static final String username="";
+    public static String username="";
 
-    public static final String userId="";
+    public static String userId="";
 
 
     public SessionManager(Context context) {
@@ -40,7 +40,9 @@ public class SessionManager {
 
     public static void createLoginSession(String id, String name) {
         editor.putBoolean(IS_LOGIN, true);
-        editor.putString(userId,id);
+
+        // Storing name in pref
+        editor.putString(userId, id);
         // Storing name in pref
         editor.putString(username, name);
 
