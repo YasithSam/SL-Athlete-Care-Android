@@ -2,6 +2,7 @@ package com.example.slathletecare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -19,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.developer.kalert.KAlertDialog;
 import com.example.slathletecare.activity.LoginActivity;
 import com.example.slathletecare.activity.SignUpActivity;
 import com.example.slathletecare.app.AppConfig;
@@ -48,6 +50,7 @@ public class OTPActivity extends AppCompatActivity {
     private TextView tvPhone;
     private Button btnVerify;
     private EditText pinView;
+    ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,8 @@ public class OTPActivity extends AppCompatActivity {
         tvPhone=findViewById(R.id.otp_description_text);
         btnVerify=findViewById(R.id.btnVerify);
         pinView=findViewById(R.id.pin_view);
-        tvPhone.setText(user.getUsername());
+
+        getSupportActionBar().hide();
 
         btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +74,7 @@ public class OTPActivity extends AppCompatActivity {
 
     private void verifyOtp(String pinView,accountRegister user){
         if(pinView.equals(user.getOtp())){
-            new AsyncRegister().execute(user.getUsername(),user.getPhone(),user.getPassword());
+            new AsyncRegister().execute(user.getUsername(),user.getPhone(),user.getPassword(),user.getEmail(), user.getGender());
         }
         else{
             Toast.makeText(getApplicationContext(),"Not Matching password",Toast.LENGTH_SHORT).show();
@@ -80,6 +84,17 @@ public class OTPActivity extends AppCompatActivity {
     private class AsyncRegister extends AsyncTask<String,String,String> {
         HttpURLConnection conn;
         URL url = null;
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Showing progress dialog
+            pDialog = new ProgressDialog(OTPActivity.this);
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
+
+        }
+
 
         @Override
         protected String doInBackground(String ... params) {
@@ -106,7 +121,9 @@ public class OTPActivity extends AppCompatActivity {
                 Uri.Builder builder = new Uri.Builder()
                         .appendQueryParameter("name", params[0])
                         .appendQueryParameter("password", params[2])
-                        .appendQueryParameter("phone",params[1]);
+                        .appendQueryParameter("phone",params[1])
+                        .appendQueryParameter("sex",params[4])
+                        .appendQueryParameter("email",params[3]);
                 String query = builder.build().getEncodedQuery();
 
                 // Open connection for sending data
@@ -162,6 +179,8 @@ public class OTPActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            if (pDialog.isShowing())
+                pDialog.dismiss();
             if (result.equals("Success")) {
                 // Launch login activity
                 Intent intent = new Intent(
@@ -198,7 +217,10 @@ public class OTPActivity extends AppCompatActivity {
 
                         if (s.equals("Success")) {
                             Toast.makeText(getApplicationContext(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
-
+                            new KAlertDialog(OTPActivity.this, KAlertDialog.SUCCESS_TYPE)
+                                    .setTitleText("Verified!")
+                                    .setContentText("User has been created Successfully!")
+                                    .show();
                             // Launch login activity
                             Intent intent = new Intent(
                                    OTPActivity.this,
