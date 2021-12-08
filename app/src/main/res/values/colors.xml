@@ -14,7 +14,7 @@
     <color name="dark_secondary">#0e1822</color>
     <color name="light">#58a5f0</color>
 
-    <!--#0e1822-->
+
     <!-- Secondary theme -->
     <!--colors for light mode-->
     <color name="contentBodyColor">#FCFCFC</color>
@@ -22,5 +22,8 @@
     <color name="imageBorderColor">#E01E7A</color>
     <color name="miniTitle">#2A2E43</color>
     <color name="featuredNewsContentColor">#8E909A</color>
+
+
+
 
 </resources>
