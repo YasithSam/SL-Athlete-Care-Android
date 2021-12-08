@@ -17,13 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            app:backgroundTint="@android:color/transparent"
+            app:backgroundTint="@color/purple_200"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
             style="@style/viewParent.headerText"
+            android:layout_marginTop="20dp"
             android:text="Health Profile" />
 
         <TextView
@@ -93,7 +94,7 @@
             app:srcCompat="@drawable/combinationchart" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/buttongg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add Health Details"
