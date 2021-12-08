@@ -33,8 +33,10 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/contentBodyColor"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3">
@@ -55,26 +57,26 @@
 
                 <TextView
                     style="@style/viewParent.headerText"
-                    android:text="Google’s new free app teaches kids  \nto read by listening to them"
+                    android:text="CPD Programme for GMOS members"
                     android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
                     android:layout_marginTop="5dp"
                     android:adjustViewBounds="true"
                     android:cropToPadding="true"
-                    android:src="@drawable/image_featured_news" />
+                    android:src="@drawable/notice" />
 
                 <TextView
                     style="@style/miniTitle"
                     android:layout_marginTop="5dp"
                     android:maxLines="2"
-                    android:text="Google has just ripped the beta label off Rivet, its \nfree mobile app designed to help young children learn to read. "
+                    android:text="Join us at our last event of 2021 as we explore 𝗧𝗲𝗮𝗺 𝗦𝗽𝗼𝗿𝘁𝘀 𝗶𝗻 𝘁𝗵𝗲 𝗧𝗶𝗺𝗲 𝗼𝗳 𝗖𝗢𝗩𝗜𝗗-𝟭𝟵. Visit our event page to register for FREE! "
                     android:textColor="@color/featuredNewsContentColor" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnN"
                     android:layout_width="80dp"
                     android:layout_height="40dp"
                     android:layout_gravity="end"
@@ -109,13 +111,15 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cca"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
+                            android:clickable="true"
                             android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/light"
+                            app:cardBackgroundColor="@color/primary"
                             app:cardCornerRadius="16dp"
                             app:cardElevation="10dp">
 
@@ -126,17 +130,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/a"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Athletics"
@@ -150,13 +155,15 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/ccc"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
+                            android:clickable="true"
                             android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
+                            app:cardBackgroundColor="@color/dark"
                             app:cardCornerRadius="16dp"
                             app:cardElevation="10dp">
 
@@ -167,17 +174,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/c"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Cricket"
@@ -197,7 +205,7 @@
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
                             android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
+                            app:cardBackgroundColor="@color/dark"
                             app:cardCornerRadius="16dp"
                             app:cardElevation="10dp">
 
@@ -208,17 +216,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/r"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Rugby"
@@ -238,7 +247,7 @@
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
                             android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
+                            app:cardBackgroundColor="@color/dark"
                             app:cardCornerRadius="16dp"
                             app:cardElevation="10dp">
 
@@ -249,17 +258,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/f"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Football"
@@ -279,7 +289,7 @@
                             android:layout_marginRight="20dp"
                             android:layout_marginBottom="20dp"
                             android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
+                            app:cardBackgroundColor="@color/dark"
                             app:cardCornerRadius="16dp"
                             app:cardElevation="10dp">
 
@@ -290,17 +300,17 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Other"
@@ -342,6 +352,7 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/ccaq"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -359,17 +370,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/a"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Athletics"
@@ -400,17 +412,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/c"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Cricket"
@@ -441,13 +454,14 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/r"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -482,17 +496,18 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
+                                    android:background="@drawable/f"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Football"
@@ -523,250 +538,17 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
+                                    android:layout_weight="2"
                                     android:adjustViewBounds="true"
                                     android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
+                                    android:maxWidth="100dp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Other"
-                                    android:textColor="@color/contentBodyColor"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-                    </LinearLayout>
-                </HorizontalScrollView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Poll Section"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:adjustViewBounds="true"
-                                    android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Athletics"
-                                    android:textColor="@color/contentBodyColor"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:adjustViewBounds="true"
-                                    android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Cricket"
-                                    android:textColor="@color/contentBodyColor"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:adjustViewBounds="true"
-                                    android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Rugby"
-                                    android:textColor="@color/contentBodyColor"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:adjustViewBounds="true"
-                                    android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginBottom="10dp"
-                                    android:text="Football"
-                                    android:textColor="@color/contentBodyColor"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginBottom="20dp"
-                            android:minHeight="150dp"
-                            app:cardBackgroundColor="@color/dark_secondary"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:adjustViewBounds="true"
-                                    android:cropToPadding="true"
-                                    android:maxWidth="100dp"
-                                    android:src="@drawable/android_developer" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:layout_height="match_parent"
                                     android:layout_gravity="center"
                                     android:layout_marginBottom="10dp"
                                     android:text="Other"
