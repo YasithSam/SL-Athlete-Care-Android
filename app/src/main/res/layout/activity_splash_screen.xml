@@ -19,7 +19,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
-            android:background="@android:drawable/sym_def_app_icon"></ImageView>
+            android:background="@drawable/logo"></ImageView>
 
         <TextView
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="5dp"
             android:text="SL ATHLETE CARE"
-            android:textColor="@color/dark"
+            android:textColor="@color/dark_secondary"
             android:textSize="32sp">
 
         </TextView>
