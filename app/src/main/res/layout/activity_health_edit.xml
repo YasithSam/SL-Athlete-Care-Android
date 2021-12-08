@@ -18,10 +18,12 @@
             android:id="@+id/f_advice7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/purple_200"
             android:clickable="true"
-            app:backgroundTint="@android:color/transparent"
+            app:backgroundTint="@android:color/holo_purple"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:rippleColor="@color/purple_200"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
