@@ -7,10 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.slathletecare.activity.ArticleOneActivity;
+import com.example.slathletecare.activity.CaseStudyActivity;
+import com.example.slathletecare.activity.HealthActivity;
+import com.example.slathletecare.activity.HealthEditActivity;
 import com.example.slathletecare.activity.InjuryActivity;
 import com.example.slathletecare.activity.IntroActivity;
 import com.example.slathletecare.activity.LoginActivity;
 import com.example.slathletecare.activity.SignUpActivity;
+import com.example.slathletecare.casestudy.CaseStudyItemActivity;
+import com.example.slathletecare.casestudy.inner.DietActivity;
+import com.example.slathletecare.casestudy.inner.WorkoutActivity;
+import com.example.slathletecare.tabbed.FAActivity;
 
 
 public class SplashScreen extends AppCompatActivity {
@@ -19,6 +27,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        getSupportActionBar().hide();
         new Handler().postDelayed(new Runnable() {
 
 // Using handler with postDelayed called runnable run method
@@ -27,7 +36,7 @@ public class SplashScreen extends AppCompatActivity {
 
             public void run() {
 
-                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
+                Intent i = new Intent(SplashScreen.this, IntroActivity.class);
 
                 startActivity(i);
 

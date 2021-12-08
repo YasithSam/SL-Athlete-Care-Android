@@ -3,7 +3,8 @@ package com.example.slathletecare.app;
 public class AppConfig {
 
     //Server base url
-    public static String URL_BASE = "http://192.168.8.107/SL-athlete-care/api/v1";
+    //ipconfig getifaddr en0
+    public static String URL_BASE = "http://192.168.8.143/SL-athlete-care/api/v1";
 
     // Server user register url
     public static String URL_REGISTER = URL_BASE+"/SignUp.php";
@@ -24,5 +25,22 @@ public class AppConfig {
     public static String URL_INJURYDATA= URL_BASE+"/injuryData.php";
     // Server data injury
     public static String URL_INJURY= URL_BASE+"/injury.php";
+    // Server data health
+    public static String URL_ADD_HEALTH= URL_BASE+"/addhealth.php";
+    // Server data health
+    public static String URL_GHEALTH= URL_BASE+"/gethealth.php";
+    // Server data health
+    public static String URL_USER= URL_BASE+"/getUserData.php";
+
+    // Server data health
+    public static String URL_SPORTS= URL_BASE+"/getUserSports.php";
+
+    // Server data sport
+    public static String URL_ADD_SPORT= URL_BASE+"/addSportsData.php";
+
+    // Update user data
+    public static String URL_UPDATE_USER= URL_BASE+"/updateUserData.php";
+
+
 
 }
