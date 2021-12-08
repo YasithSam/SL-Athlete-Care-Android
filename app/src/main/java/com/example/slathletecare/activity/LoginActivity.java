@@ -2,6 +2,7 @@ package com.example.slathletecare.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.nfc.Tag;
@@ -42,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     private String username;
     private String password;
     private TextView btnForget;
+    private ProgressDialog pDialog;
     TextView click;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +54,19 @@ public class LoginActivity extends AppCompatActivity {
         mPassword=findViewById(R.id.mPassword);
         btnLogin=findViewById(R.id.btnSignIn);
         btnForget=findViewById(R.id.tvForget);
+        click=findViewById(R.id.textView101);
+        getSupportActionBar().hide();
 
         btnForget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, ForgetPassword.class));
+            }
+        });
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
 
@@ -75,6 +85,17 @@ public class LoginActivity extends AppCompatActivity {
    private class AsyncLogin extends AsyncTask<String,String,String> {
        HttpURLConnection conn;
        URL url = null;
+       @Override
+       protected void onPreExecute() {
+           super.onPreExecute();
+           // Showing progress dialog
+           pDialog = new ProgressDialog(LoginActivity.this);
+           pDialog.setMessage("Please wait...");
+           pDialog.setCancelable(false);
+           pDialog.show();
+
+       }
+
 
        @Override
        protected String doInBackground(String ... params) {
@@ -153,6 +174,8 @@ public class LoginActivity extends AppCompatActivity {
 
        @Override
        protected void onPostExecute(String result) {
+           if (pDialog.isShowing())
+               pDialog.dismiss();
 
            try{
                JSONObject obj = new JSONObject(result);
