@@ -7,7 +7,7 @@ public class Conversation {
    private String topMessage;
    private String imgUrl;
 
-   public Conversation(int id,String from, String topMsg) {
+   public Conversation(String from, String topMsg) {
       this.fromUser = from;
       this.topMessage =topMsg;
 
