@@ -17,82 +17,58 @@
             style="@style/viewParent.headerText"
             android:text="Settings" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profileCircleImageView"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                app:civ_border_width="2dp"
-                app:civ_border_color="@color/imageBorderColor"
-                android:src="@drawable/user_dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="10dp"/>
-
-            <TextView
-                android:id="@+id/usernameTextView"
-                style="@style/viewParent.headerText"
-                android:layout_marginTop="20dp"
-                android:layout_toRightOf="@id/profileCircleImageView"
-                android:text="Yasith Samaradivakara"
-                android:textSize="18sp" />
-
-            <TextView
-                style="@style/viewParent.headerText"
-                android:text="Edit personal details"
-                android:textSize="16sp"
-                android:textColor="#5D5C5C"
-                android:layout_below="@id/usernameTextView"
-                android:layout_toRightOf="@id/profileCircleImageView"/>
-
-            <ImageView
-                style="@style/viewParent"
-                android:src="@drawable/ic_more"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"/>
-
-        </RelativeLayout>
-
-
 
         <TextView
             style="@style/viewParent.headerText.settingsMiniTitle"
             android:text="Profile"/>
 
         <TextView
+            android:id="@+id/tv_edit"
             style="@style/viewParent.headerText.settingsTextIcon"
+            android:clickable="true"
             android:drawableLeft="@drawable/ic_edit_profile"
             android:text="Edit Profile" />
 
         <TextView
+            android:id="@+id/tv_change"
             style="@style/viewParent.headerText.settingsTextIcon"
-            android:drawableLeft="@drawable/ic_edit_password"
             android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_edit_password"
             android:text="Change Password" />
 
         <TextView
+            android:id="@+id/textView34"
             style="@style/viewParent.headerText.settingsMiniTitle"
-            android:text="Notifications"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notifications Schedules" />
 
         <Switch
+            android:id="@+id/switch1"
             style="@style/settingsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:checked="true"
             android:drawableLeft="@drawable/ic_notifications"
             android:text="Notifications" />
 
         <TextView
             style="@style/viewParent.headerText.settingsMiniTitle"
-            android:text="Regional"/>
+            android:text="Other" />
 
         <TextView
+            android:id="@+id/textView577"
             style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_languages"
-            android:text="Language" />
+            android:text="Privacy Policy and Help" />
 
         <TextView
+            android:id="@+id/tv_lgout"
             style="@style/viewParent.headerText.settingsTextIcon"
+            android:clickable="true"
             android:drawableLeft="@drawable/ic_logout"
             android:text="Logout" />
 
