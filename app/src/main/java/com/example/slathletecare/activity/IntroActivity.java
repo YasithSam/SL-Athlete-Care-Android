@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.developer.kalert.KAlertDialog;
+import com.example.slathletecare.OTPActivity;
 import com.example.slathletecare.R;
 
 
@@ -22,17 +23,7 @@ public class IntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
         btnReg=findViewById(R.id.btnSignUp);
         btnLog=findViewById(R.id.btnLogin);
-        KAlertDialog pDialog = new KAlertDialog(this,KAlertDialog.WARNING_TYPE);
-        pDialog.setTitleText("Here's a message!");
-        pDialog.setContentText("It's pretty, isn't it?");
-        pDialog.setConfirmText("Yes,delete it!");
-        pDialog.setConfirmClickListener(new KAlertDialog.KAlertClickListener() {
-            @Override
-            public void onClick(KAlertDialog sDialog) {
-                sDialog.dismissWithAnimation();
-            }
-        });
-        pDialog.show();
+        getSupportActionBar().hide();
 
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +35,7 @@ public class IntroActivity extends AppCompatActivity {
         btnLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(IntroActivity.this,LoginActivity.class));
                 finish();
 
