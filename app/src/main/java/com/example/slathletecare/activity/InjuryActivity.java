@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.slathletecare.ForgetPassword;
@@ -47,11 +49,13 @@ import java.util.List;
 public class InjuryActivity extends AppCompatActivity {
     public ArrayList<String> iList=new ArrayList<>();
     public ArrayList<String> dList=new ArrayList<>();
-    SessionManager sessionManager;
+    ProgressDialog pDialog;
+
     private Spinner s;
     private Spinner s1;
     Button btnP,btnC;
     EditText etCon,etDes;
+    TextView te;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,10 @@ public class InjuryActivity extends AppCompatActivity {
         s1 = (Spinner) findViewById(R.id.spinnerDoc);
         btnP=findViewById(R.id.btnPostInjury);
         btnC=findViewById(R.id.btnCancelInjury);
+        te=findViewById(R.id.textView7);
+
+
+
         etCon=findViewById(R.id.etCon);
         etDes=findViewById(R.id.etDesc);
         btnP.setOnClickListener(new View.OnClickListener() {
@@ -130,11 +138,11 @@ public class InjuryActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            // Showing progress dialog
-            //pDialog = new ProgressDialog(MainActivity.this);
-            //pDialog.setMessage("Please wait...");
-            //pDialog.setCancelable(false);
-           // pDialog.show();
+
+            pDialog = new ProgressDialog(InjuryActivity.this);
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(false);
+            pDialog.show();
 
         }
 
@@ -205,11 +213,9 @@ public class InjuryActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             // Dismiss the progress dialog
-            //if (pDialog.isShowing())
-               // pDialog.dismiss();
+            if (pDialog.isShowing())
+                pDialog.dismiss();
             addSpinner();
-
-
 
         }
 
@@ -238,9 +244,8 @@ public class InjuryActivity extends AppCompatActivity {
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
-                sessionManager =  new SessionManager(getApplicationContext());
-                HashMap<String, String> user = sessionManager.getUserDetails();
-                String userId=user.get(sessionManager.userId);
+
+                String userId="sl-ac-617e516484ac0";
                 String doctor=params[1].equals("For all")?"0":params[1];
                 // Append parameters to URL
                 Uri.Builder builder = new Uri.Builder()
