@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,12 +44,18 @@ public class SignUpActivity extends AppCompatActivity {
     private Button btnRegister;
     private EditText inputUsername;
     private EditText inputPhone;
+    private EditText inputEmail;
     private EditText inputPassword;
     private EditText inputConfirmPassword;
     private String name;
     private String phone;
     private String password;
+    private String email;
+    private String sex;
     private String confirmPassword;
+    private RadioGroup radioSexGroup;
+    private RadioButton radioSexButton;
+    Button btnc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,15 +63,29 @@ public class SignUpActivity extends AppCompatActivity {
         inputUsername = findViewById(R.id.username);
         inputPhone = findViewById(R.id.phone);
         inputPassword=findViewById(R.id.password);
+        inputEmail=findViewById(R.id.email);
+        radioSexGroup=findViewById(R.id.rr);
         inputConfirmPassword=findViewById(R.id.confirmPassword);
         btnRegister=findViewById(R.id.btnRegister);
+        btnc=findViewById(R.id.buttonCC);
+        getSupportActionBar().hide();
 
+        btnc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+            }
+        });
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int selectedId=radioSexGroup.getCheckedRadioButtonId();
+                radioSexButton=(RadioButton)findViewById(selectedId);
                 name = inputUsername.getText().toString().trim();
                 phone = inputPhone.getText().toString().trim();
                 password = inputPassword.getText().toString().trim();
+                email = inputEmail.getText().toString().trim();
+                sex=radioSexButton.getText().toString();
                 confirmPassword= inputConfirmPassword.getText().toString().trim();
 
                 if (validateUser(name,password,phone)) {
@@ -71,7 +93,7 @@ public class SignUpActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Passwords are not matching",Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        new AsyncOTP().execute(name,phone,password);
+                        new AsyncOTP().execute(name,phone,password,email,sex);
                     }
 
 
@@ -174,7 +196,7 @@ public class SignUpActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             if (!result.isEmpty()) {
-                accountRegister user=new accountRegister(name,phone,password,result);
+                accountRegister user=new accountRegister(name,phone,password,sex,email,result);
                 Intent intent = new Intent(SignUpActivity.this, OTPActivity.class);
                 intent.putExtra("user",user);
                 startActivity(intent);
@@ -278,9 +300,9 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean validatePassword(String password){
 
         String passwordVal = "^" +
-                //"(?=.*[0-9])" +         //at least 1 digit
-                //"(?=.*[a-z])" +         //at least 1 lower case letter
-                //"(?=.*[A-Z])" +         //at least 1 upper case letter
+                "(?=.*[0-9])" +         //at least 1 digit
+                "(?=.*[a-z])" +         //at least 1 lower case letter
+                "(?=.*[A-Z])" +         //at least 1 upper case letter
                 "(?=.*[a-zA-Z])" +      //any letter
                 "(?=.*[@#$%^&+=])" +    //at least 1 special character
                 "(?=\\S+$)" +           //no white spaces
