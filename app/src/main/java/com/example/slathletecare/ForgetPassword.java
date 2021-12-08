@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.slathletecare.activity.LoginActivity;
 import com.example.slathletecare.app.AppConfig;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,6 +39,7 @@ public class ForgetPassword extends AppCompatActivity {
     String username;
     String cPassword;
     String nPassword;
+    FloatingActionButton fk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,8 @@ public class ForgetPassword extends AppCompatActivity {
         fNPassword=findViewById(R.id.mFNPassword);
         btnBack=findViewById(R.id.btnBack);
         btnChange=findViewById(R.id.btnForgetPassword);
-
+        fk=findViewById(R.id.fkf);
+        getSupportActionBar().hide();
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +64,12 @@ public class ForgetPassword extends AppCompatActivity {
                 cPassword=fCPassword.getText().toString();
                 nPassword=fNPassword.getText().toString();
                 new AsyncForget().execute(username,cPassword,nPassword);
+            }
+        });
+        fk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ForgetPassword.this, LoginActivity.class));
             }
         });
 
