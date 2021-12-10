@@ -33,6 +33,7 @@ public class PostFragment extends Fragment {
         c3=root.findViewById(R.id.d11);
         c4=root.findViewById(R.id.w11);
 
+
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
