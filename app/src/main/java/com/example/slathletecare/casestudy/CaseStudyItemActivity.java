@@ -3,6 +3,7 @@ package com.example.slathletecare.casestudy;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.slathletecare.R;
@@ -17,6 +18,7 @@ public class CaseStudyItemActivity extends AppCompatActivity {
     TabItem tab1;
     TabItem tab2;
     TabItem tab3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +29,10 @@ public class CaseStudyItemActivity extends AppCompatActivity {
         tab3 = findViewById(R.id.tabPost);
         viewPager = findViewById(R.id.viewPagerCaseStudy);
         getSupportActionBar().hide();
+        Intent myIntent = getIntent();
+        int id = myIntent.getIntExtra("id",0);
 
-        pageAdapter = new PageAdapterCS(getSupportFragmentManager(), tabLayout.getTabCount());
+        pageAdapter = new PageAdapterCS(getSupportFragmentManager(), tabLayout.getTabCount(),id);
         viewPager.setAdapter(pageAdapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -36,7 +40,6 @@ public class CaseStudyItemActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-
             }
 
             @Override
