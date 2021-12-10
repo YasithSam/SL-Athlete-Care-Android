@@ -49,5 +49,32 @@ public class AppConfig {
     public static String URL_CASE_STUDY_UPDATES= URL_BASE+"/getUpdates.php";
 
 
+    // get medicine data
+    public static String URL_CASE_STUDY_MEDICINE= URL_BASE+"/getMedicine.php";
+
+    // get diet data
+    public static String URL_CASE_STUDY_DIET= URL_BASE+"/getDiet.php";
+
+    // get workout data
+    public static String URL_CASE_STUDY_WORKOUT= URL_BASE+"/getWorkout.php";
+
+    // get image data
+    public static String URL_CASE_STUDY_IMAGE= URL_BASE+"/getImages.php";
+
+    // get advices data
+    public static String URL_CASE_STUDY_ADVICE= URL_BASE+"/getAdvices.php";
+
+
+//    // get case study data
+//    public static String URL_CASE_STUDY_= URL_BASE+"/getUpdates.php";
+//
+//    // get case study data
+//    public static String URL_CASE_STUDY_UPDATES= URL_BASE+"/getUpdates.php";
+//    // get case study data
+//    public static String URL_CASE_STUDY_UPDATES= URL_BASE+"/getUpdates.php";
+
+
+
+
 
 }
