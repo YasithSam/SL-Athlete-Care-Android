@@ -41,6 +41,13 @@ public class AppConfig {
     // Update user data
     public static String URL_UPDATE_USER= URL_BASE+"/updateUserData.php";
 
+    // get case study data
+    public static String URL_CASE_STUDY_ALL= URL_BASE+"/getAllCaseStudy.php";
+
+
+    // get case study data
+    public static String URL_CASE_STUDY_UPDATES= URL_BASE+"/getUpdates.php";
+
 
 
 }
