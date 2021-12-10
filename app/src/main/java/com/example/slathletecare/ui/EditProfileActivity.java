@@ -185,7 +185,6 @@ public class EditProfileActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
             try{
                 JSONObject obj = new JSONObject(result);
                 if (obj.getString("status").equals("ok")) {
