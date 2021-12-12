@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
         android:layout_marginStart="5dp"
@@ -40,15 +40,15 @@
                 android:id="@+id/w_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="TextView" />
+                android:text="TextView"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/w_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="TextView" />
+                android:text="TextView"
+                android:visibility="gone" />
 
         </LinearLayout>
 
