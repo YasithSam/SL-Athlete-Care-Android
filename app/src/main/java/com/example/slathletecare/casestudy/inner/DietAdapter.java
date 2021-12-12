@@ -18,6 +18,7 @@ import java.util.List;
 
 public class DietAdapter extends RecyclerView.Adapter<DietAdapter.MyViewHolder> {
     private List<DietSchedule> mList;
+    private View.OnClickListener mOnItemClickListener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -29,6 +30,8 @@ public class DietAdapter extends RecyclerView.Adapter<DietAdapter.MyViewHolder> 
             title = (TextView) itemView.findViewById(R.id.schedule_name);
             desc = (TextView) itemView.findViewById(R.id.s_s_d);
             id= (TextView) itemView.findViewById(R.id.s_id);
+            itemView.setTag(this);
+            itemView.setOnClickListener(mOnItemClickListener);
         }
     }
 
@@ -58,4 +61,9 @@ public class DietAdapter extends RecyclerView.Adapter<DietAdapter.MyViewHolder> 
     public int getItemCount() {
         return mList.size();
     }
+
+    public void setOnItemClickListener(View.OnClickListener itemClickListener) {
+        mOnItemClickListener = itemClickListener;
+    }
+
 }

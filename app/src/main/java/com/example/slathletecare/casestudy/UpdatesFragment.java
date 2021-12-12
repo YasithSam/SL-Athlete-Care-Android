@@ -13,16 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.slathletecare.R;
-import com.example.slathletecare.activity.SportActivity;
-import com.example.slathletecare.activity.SportsAdapter;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
-import com.example.slathletecare.databinding.FragmentPreBinding;
 import com.example.slathletecare.databinding.FragmentUpdatesBinding;
-import com.example.slathletecare.model.Sport;
 import com.example.slathletecare.model.Update;
 
 import org.json.JSONArray;
@@ -48,7 +43,7 @@ public class UpdatesFragment extends Fragment {
         setHasOptionsMenu(true);
         binding= FragmentUpdatesBinding.inflate(inflater, container, false);
         View v=binding.getRoot();
-        textView=v.findViewById(R.id.textView292);
+        textView=v.findViewById(R.id.te);
         recyclerView = (RecyclerView) v.findViewById(R.id.u_u);
 
         mAdapter = new UpdateAdapter(uList);

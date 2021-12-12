@@ -18,6 +18,7 @@ import java.util.List;
 
 public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHolder> {
     private List<WorkoutSchedule> mList;
+    private View.OnClickListener mOnItemClickListener;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -29,8 +30,13 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
             title = (TextView) itemView.findViewById(R.id.w_schedule_name);
             id = (TextView) itemView.findViewById(R.id.w_id);
             d = (TextView) itemView.findViewById(R.id.w_d);
+            itemView.setTag(this);
+            itemView.setOnClickListener(mOnItemClickListener);
 
         }
+    }
+    public void setOnItemClickListener(View.OnClickListener itemClickListener) {
+        mOnItemClickListener = itemClickListener;
     }
 
 
