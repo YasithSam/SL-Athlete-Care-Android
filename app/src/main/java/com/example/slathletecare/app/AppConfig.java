@@ -65,13 +65,13 @@ public class AppConfig {
     public static String URL_CASE_STUDY_ADVICE= URL_BASE+"/getAdvices.php";
 
 
-//    // get case study data
-//    public static String URL_CASE_STUDY_= URL_BASE+"/getUpdates.php";
+ // get case study data
+    public static String URL_SCHEDULES= URL_BASE+"/getSchedules.php";
 //
-//    // get case study data
-//    public static String URL_CASE_STUDY_UPDATES= URL_BASE+"/getUpdates.php";
-//    // get case study data
-//    public static String URL_CASE_STUDY_UPDATES= URL_BASE+"/getUpdates.php";
+  // get case study data
+    public static String URL_WORKOUT_EVENTS= URL_BASE+"/getWorkoutEvents.php";
+    // get case study data
+    public static String URL_DIET_EVENTS= URL_BASE+"/getDietEvents.php";
 
 
 
