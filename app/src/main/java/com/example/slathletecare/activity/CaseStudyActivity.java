@@ -59,8 +59,6 @@ public class CaseStudyActivity extends AppCompatActivity {
         mAdapterOld.setOnItemClickListener(onItemClickListener2);
 
 
-
-
     }
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {
         @Override
