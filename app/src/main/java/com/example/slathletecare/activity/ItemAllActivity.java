@@ -8,11 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.slathletecare.ArticleAdapter;
 import com.example.slathletecare.R;
+import com.example.slathletecare.casestudy.CaseStudyItemActivity;
+import com.example.slathletecare.model.Article;
 import com.example.slathletecare.model.Articles;
+import com.example.slathletecare.model.CaseStudy;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +26,9 @@ public class ItemAllActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArticleAdapter mAdapter;
-    private List<Articles> aList = new ArrayList<>();
-    TextView artone;
-
+    private List<Article> list = new ArrayList<>();
+    TextView tv1,tv2;
+    ImageView i1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,72 +36,41 @@ public class ItemAllActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_all);
         recyclerView = (RecyclerView) findViewById(R.id.rv_1);
         getSupportActionBar().hide();
-        artone=findViewById(R.id.artcone);
-        artone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ItemAllActivity.this,ArticleOneActivity.class));
-            }
-        });
-
-        mAdapter = new ArticleAdapter(aList);
+        i1=findViewById(R.id.iv_i_ii);
+        tv1=findViewById(R.id.tv_i_hh);
+        tv2=findViewById(R.id.tv_i_dd);
+        Intent i = getIntent();
+        Bundle args = i.getBundleExtra("data");
+        list = (ArrayList<Article>) args.getSerializable("ARRAYLIST");
+        Picasso.get().load(list.get(0).getUrl()).into(i1);
+        tv1.setText(list.get(0).getHeading());
+        tv2.setText(list.get(0).getDescription());
+        mAdapter = new ArticleAdapter(list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+        mAdapter.setOnItemClickListener(onItemClickListener);
 
     }
-//    private void prepareMovieData() {
-//        Movie movie = new Movie("Mad Max: Fury Road", "Action & Adventure", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Inside Out", "Animation, Kids & Family", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Star Wars: Episode VII - The Force Awakens", "Action", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Shaun the Sheep", "Animation", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("The Martian", "Science Fiction & Fantasy", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Mission: Impossible Rogue Nation", "Action", "2015");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Up", "Animation", "2009");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Star Trek", "Science Fiction", "2009");
-//        movieList.add(movie);
-//
-//        movie = new Movie("The LEGO Movie", "Animation", "2014");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Iron Man", "Action & Adventure", "2008");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Aliens", "Science Fiction", "1986");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Chicken Run", "Animation", "2000");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Back to the Future", "Science Fiction", "1985");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Raiders of the Lost Ark", "Action & Adventure", "1981");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Goldfinger", "Action & Adventure", "1965");
-//        movieList.add(movie);
-//
-//        movie = new Movie("Guardians of the Galaxy", "Science Fiction & Fantasy", "2014");
-//        movieList.add(movie);
-//
-//        mAdapter.notifyDataSetChanged();
-//    }
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
 
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+            int position = viewHolder.getAbsoluteAdapterPosition();
+            Article cs = list.get(position);
+            Intent myIntent = new Intent(ItemAllActivity.this, ArticleOneActivity.class);
+            myIntent.putExtra("h",cs.getHeading());
+            myIntent.putExtra("d",cs.getDescription());
+            myIntent.putExtra("l",cs.getLikes());
+            myIntent.putExtra("k",cs.getComments());
+            myIntent.putExtra("i",cs.getUrl());
+            myIntent.putExtra("id",cs.getId());
+            startActivity(myIntent);
+
+        }
+    };
 
 }
