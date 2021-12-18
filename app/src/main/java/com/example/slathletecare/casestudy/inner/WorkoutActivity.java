@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.transition.AutoTransition;
@@ -18,10 +19,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.slathletecare.R;
+import com.example.slathletecare.activity.CaseStudyActivity;
 import com.example.slathletecare.activity.SportActivity;
 import com.example.slathletecare.activity.SportsAdapter;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
+import com.example.slathletecare.casestudy.CaseStudyItemActivity;
+import com.example.slathletecare.model.CaseStudy;
 import com.example.slathletecare.model.Sport;
 import com.example.slathletecare.model.WorkoutEvent;
 
@@ -38,23 +42,17 @@ public class WorkoutActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private WorkoutEventsAdapter mAdapter;
     private List<WorkoutEvent> sList = new ArrayList<>();
-    ImageButton arrow,a2;
-    RecyclerView rew;
-    LinearLayout hiddenView,l2;
-    CardView cardView,c2;
+    ImageButton arrow;
+    LinearLayout hiddenView;
+    CardView cardView;
     TextView tdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
-        cardView = findViewById(R.id.cccx);
-        arrow = findViewById(R.id.arrow_button);
         recyclerView = (RecyclerView) findViewById(R.id.r_e_w);
-        hiddenView = findViewById(R.id.l1);
         tdd = findViewById(R.id.tdddd);
         tdd.setText(getIntent().getStringExtra("desc"));
-        l2 = findViewById(R.id.l2);
-        rew = findViewById(R.id.r_e_w);
         getSupportActionBar().hide();
         mAdapter = new WorkoutEventsAdapter(sList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -62,6 +60,7 @@ public class WorkoutActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
         new AsyncGetWorkoutEvents().execute();
+        mAdapter.setOnItemClickListener(onItemClickListener);
 
 
 //        arrow.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +112,29 @@ public class WorkoutActivity extends AppCompatActivity {
 //            }
 //        });
     }
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+            int position = viewHolder.getAbsoluteAdapterPosition();
+            if (hiddenView.getVisibility() == View.VISIBLE) {
+                    TransitionManager.beginDelayedTransition(cardView,
+                            new AutoTransition());
+                    hiddenView.setVisibility(View.GONE);
+
+                }
+
+                else {
+
+                    TransitionManager.beginDelayedTransition(cardView,
+                            new AutoTransition());
+                    hiddenView.setVisibility(View.VISIBLE);
+                    arrow.setImageResource(R.drawable.ic_baseline_expand_less_24);
+                }
+
+
+        }
+    };
 
         private class AsyncGetWorkoutEvents extends AsyncTask<Void,Void,Void> {
 
@@ -136,13 +158,13 @@ public class WorkoutActivity extends AppCompatActivity {
                             if(st.getString("reps").equals("0")) {
                                 WorkoutEvent s = new WorkoutEvent(st.getString("title"), st.getString("description"),"Time",st.getString("time"));
                                 sList.add(s);
-                                addEvents(len,data,s);
+                                //addEvents(len,data,s);
 
                             }
                             else{
                                 WorkoutEvent s = new WorkoutEvent(st.getString("title"), st.getString("description"),"Reps",st.getString("reps"));
                                 sList.add(s);
-                                addEvents(len,data,s);
+                                //addEvents(len,data,s);
                             }
                         }
 
@@ -175,24 +197,24 @@ public class WorkoutActivity extends AppCompatActivity {
 
                 return null;
             }
-            public void addEvents(int len , JSONArray data, WorkoutEvent s){
-                try {
-                    for (int i = 1; i < len; i++) {
-                        JSONObject s2 = data.getJSONObject(i);
-                        if (s2.getString("reps").equals("0")) {
-                            s = new WorkoutEvent(s2.getString("title"), s2.getString("description"), "Time", s2.getString("time"));
-                            sList.add(s);
-                        } else {
-                            s = new WorkoutEvent(s2.getString("title"), s2.getString("description"), "Reps", s2.getString("reps"));
-                            sList.add(s);
-                        }
-
-                    }
-                }
-                catch (Exception e){
-
-                }
-            }
+//            public void addEvents(int len , JSONArray data, WorkoutEvent s){
+//                try {
+//                    for (int i = 1; i < len; i++) {
+//                        JSONObject s2 = data.getJSONObject(i);
+//                        if (s2.getString("reps").equals("0")) {
+//                            s = new WorkoutEvent(s2.getString("title"), s2.getString("description"), "Time", s2.getString("time"));
+//                            sList.add(s);
+//                        } else {
+//                            s = new WorkoutEvent(s2.getString("title"), s2.getString("description"), "Reps", s2.getString("reps"));
+//                            sList.add(s);
+//                        }
+//
+//                    }
+//                }
+//                catch (Exception e){
+//
+//                }
+//            }
 
             @Override
             protected void onPostExecute(Void result) {
