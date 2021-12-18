@@ -3,6 +3,9 @@
     package="com.example.slathletecare">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:name=".AppController"
@@ -13,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SLAthleteCare"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.PrivacyActivity"></activity>
+        <activity android:name=".casestudy.AddFeedBackActivity"></activity>
+        <activity android:name=".casestudy.FeedbackActivity" />
+        <activity android:name=".casestudy.inner.AddImageActivity" />
+        <activity android:name=".activity.PrivacyActivity" />
         <activity android:name=".activity.EditSportActivity" />
         <activity android:name=".activity.AddSportActivity" />
         <activity android:name=".activity.SportActivity" />
