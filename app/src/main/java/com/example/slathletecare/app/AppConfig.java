@@ -4,7 +4,7 @@ public class AppConfig {
 
     //Server base url
     //ipconfig getifaddr en0
-    public static String URL_BASE = "http://192.168.8.143/SL-athlete-care/api/v1";
+    public static String URL_BASE = "http://192.168.8.106/SL-athlete-care/api/v1";
 
     // Server user register url
     public static String URL_REGISTER = URL_BASE+"/SignUp.php";
@@ -37,6 +37,8 @@ public class AppConfig {
 
     // Server data sport
     public static String URL_ADD_SPORT= URL_BASE+"/addSportsData.php";
+    // Server data sport
+    public static String URL_ADD_Q= URL_BASE+"/addQuestion.php";
 
     // Update user data
     public static String URL_UPDATE_USER= URL_BASE+"/updateUserData.php";
@@ -59,7 +61,7 @@ public class AppConfig {
     public static String URL_CASE_STUDY_WORKOUT= URL_BASE+"/getWorkout.php";
 
     // get image data
-    public static String URL_CASE_STUDY_IMAGE= URL_BASE+"/getImages.php";
+    public static String URL_CASE_STUDY_IMAGE= URL_BASE+"/getImage.php";
 
     // get advices data
     public static String URL_CASE_STUDY_ADVICE= URL_BASE+"/getAdvices.php";
@@ -73,8 +75,14 @@ public class AppConfig {
     // get case study data
     public static String URL_DIET_EVENTS= URL_BASE+"/getDietEvents.php";
 
+    public static String URL_ADD_FEEDBACKS =URL_BASE+"/addFeedbacks.php";
 
+    public static String URL_GET_FEEDBACKS =URL_BASE+"/getFeedbacks.php";
+    public static String URL_GET_ALL =URL_BASE+"/getAll.php";
 
+    public static String URL_GET_FORUM =URL_BASE+"/getUserForum.php";
 
+    public static String URL_ADD_COMMENTS =URL_BASE+"/addComment.php";
+    public static String URL_GET_COMMENTS =URL_BASE+"/getComments.php";
 
 }
