@@ -47,7 +47,7 @@ import static com.example.slathletecare.AppController.TAG;
 
 
 public class PreFragment extends Fragment {
-    CardView c1,c2;
+    CardView c1,c2,c3;
     private FragmentPreBinding binding;
     Bundle bundle;
     private RecyclerView recyclerView;
@@ -65,6 +65,7 @@ public class PreFragment extends Fragment {
         View v=binding.getRoot();
         c1=v.findViewById(R.id.m);
         c2=v.findViewById(R.id.a);
+        c3=v.findViewById(R.id.f);
         bundle=getArguments();
         mAdapter = new DietAdapter(mList2);
         recyclerView = (RecyclerView) v.findViewById(R.id.r_d_d);
@@ -100,13 +101,22 @@ public class PreFragment extends Fragment {
 
             }
         });
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), FeedbackActivity.class);
+                myIntent.putExtra("id", bundle.getInt("id"));
+                myIntent.putExtra("type",0);
+                startActivity(myIntent);
+            }
+        });
         new AsyncGet().execute();
         mAdapter.setOnItemClickListener(onItemClickListener);
         mAdapter2.setOnItemClickListener(onItemClickListener2);
 
         return v;
     }
-    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+    private View.OnClickListener onItemClickListener2 = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
@@ -120,7 +130,7 @@ public class PreFragment extends Fragment {
 
         }
     };
-    private View.OnClickListener onItemClickListener2 = new View.OnClickListener() {
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
 
@@ -165,12 +175,12 @@ public class PreFragment extends Fragment {
                     }
                     JSONArray data2 = jsonObj.getJSONArray("diet");
                     if (data2 != null) {
-                        JSONObject st=data.getJSONObject(0);
+                        JSONObject st=data2.getJSONObject(0);
                         DietSchedule m = new DietSchedule(st.getString("id"),st.getString("title"), st.getString("description"));
                         mList2.add(m);
                         int len = data2.length();
                         for (int i=1;i<len;i++){
-                            JSONObject mt=data.getJSONObject(i);
+                            JSONObject mt=data2.getJSONObject(i);
                             m= new DietSchedule(mt.getString("id"),mt.getString("title"), mt.getString("description"));
                             mList2.add(m);
                         }
