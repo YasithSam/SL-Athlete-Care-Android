@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.slathletecare.R;
@@ -35,6 +36,7 @@ import static com.example.slathletecare.AppController.TAG;
 public class DietActivity extends AppCompatActivity {
     ImageButton arrow,a2;
     LinearLayout hiddenView,l2;
+    TextView td2;
     CardView cardView,c2;
     private RecyclerView recyclerView;
     private DietEventsAdapter mAdapter;
@@ -48,7 +50,9 @@ public class DietActivity extends AppCompatActivity {
         arrow = findViewById(R.id.arrow_buttond);
         hiddenView = findViewById(R.id.l3);
         getSupportActionBar().hide();
-
+        recyclerView=findViewById(R.id.xx);
+        td2=findViewById(R.id.tddddx);
+        td2.setText(getIntent().getStringExtra("desc"));
         mAdapter = new DietEventsAdapter(sList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -114,7 +118,7 @@ public class DietActivity extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(AppConfig.URL_SPORTS+"?id=sl-ac-617e516484ac0");
+            String jsonStr = sh.makeServiceCall(AppConfig.URL_DIET_EVENTS+"?id="+getIntent().getStringExtra("id"));
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
