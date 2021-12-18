@@ -16,17 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:clickable="true"
-            android:src="@drawable/ic_baseline_notifications_24"
-            app:backgroundTint="@color/contentBodyColor" />
-
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileCircleImageView"
             android:layout_width="150dp"

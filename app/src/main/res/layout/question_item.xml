@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -8,23 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileCircleImageView5"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:src="@drawable/user_dp"
-            app:civ_border_color="@color/imageBorderColor"
-            app:civ_border_width="2dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +30,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_header"
+                    android:id="@+id/q_header"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
@@ -52,7 +42,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/tv_article_des"
+                    android:id="@+id/q_des"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
@@ -61,6 +51,15 @@
                     android:maxLines="1"
                     android:text="Hi, what's up Hasan?"
                     android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/q_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView"
+                    android:textColor="@color/design_default_color_error"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,7 +75,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/tv_d"
+                            android:id="@+id/q_d"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -84,7 +83,7 @@
                             android:textSize="10sp" />
 
                         <TextView
-                            android:id="@+id/tv_l"
+                            android:id="@+id/q_c"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -93,7 +92,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/tv_c"
+                        android:id="@+id/tvvv_c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -11,9 +11,12 @@
         android:layout_gravity="center"
         android:layout_margin="5dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -34,6 +37,7 @@
                 android:id="@+id/schedule_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="3"
                 android:text="@string/app_name"
                 android:textAlignment="center" />
 
@@ -41,15 +45,15 @@
                 android:id="@+id/s_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="TextView" />
+                android:text="TextView"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/s_s_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="TextView" />
+                android:text="TextView"
+                android:visibility="gone" />
 
         </LinearLayout>
 

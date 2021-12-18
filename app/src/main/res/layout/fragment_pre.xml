@@ -23,6 +23,60 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/f"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="8dp"
+                android:clickable="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:cardPreventCornerOverlap="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/feedbacks"
+                            style="@style/viewParent.headerText.HomeCardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_weight="1"
+                            android:text="Feedbacks"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView33333"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingStart="4dp"
+                            android:text="Feedbacks from all the users" />
+                    </LinearLayout>
+
+                    <ImageView
+                        style="@style/homeCardImage"
+
+                        android:layout_width="match_parent"
+                        android:layout_weight="3"
+                        android:maxHeight="90dp"
+                        android:src="@drawable/gallery" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:id="@+id/m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,4 +250,5 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
 </FrameLayout>

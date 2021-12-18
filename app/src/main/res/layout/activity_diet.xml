@@ -78,26 +78,28 @@
                         android:id="@+id/w_schedule_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Diet schedule - 1"
+                        android:text="Diet schedule "
                         android:textAlignment="textStart"
                         android:textColor="@color/black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tdddd"
+                        android:id="@+id/tddddx"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLines="4"
                         android:paddingTop="8dp"
                         android:text="This is a diet schedule for athlete and schedule considered about his daily meals not the extra meals."
-                        android:textSize="16sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/xx"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp" />

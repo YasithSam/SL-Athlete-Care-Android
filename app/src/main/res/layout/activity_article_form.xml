@@ -43,97 +43,101 @@
         app:layout_constraintEnd_toEndOf="@+id/toolbar18"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="30dp"
-        android:paddingRight="30dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar18">
+        app:layout_constraintTop_toBottomOf="@+id/f_advice2">
 
-        <TextView
-            android:id="@+id/textView50"
-            style="@style/viewParent.headerText.settingsMiniTitle"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title" />
+            android:orientation="vertical"
+            android:paddingStart="30dp"
+            android:paddingRight="30dp">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Title" />
+            <TextView
+                android:id="@+id/textView50"
+                style="@style/viewParent.headerText.settingsMiniTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title" />
 
-        <TextView
-            android:id="@+id/textView49"
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description" />
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Description" />
+            <TextView
+                android:id="@+id/textView49"
+                style="@style/viewParent.headerText.settingsMiniTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description" />
 
-        <TextView
-            android:id="@+id/textView62"
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Sport" />
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical" />
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textView62"
+                style="@style/viewParent.headerText.settingsMiniTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Sport" />
 
-        <TextView
-            android:id="@+id/textView63"
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tags" />
+            <Spinner
+                android:id="@+id/spinnerAS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/textView64"
+                style="@style/viewParent.headerText.settingsMiniTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Attach images" />
 
-        <TextView
-            android:id="@+id/textView64"
-            style="@style/viewParent.headerText.settingsMiniTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Attach images" />
+            <!--Button to open the image selector-->
 
-        <!--Button to open the image selector-->
+            <!--ImageView to preview the selected image-->
+            <ImageView
+                android:id="@+id/IVPreviewImageArticle"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp" />
 
-        <!--ImageView to preview the selected image-->
-        <ImageView
-            android:id="@+id/IVPreviewImage"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/gallery" />
+            <Button
+                android:id="@+id/buttonAImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark"
+                android:text="Add Image"
+                android:textColor="@color/contentBodyColor" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Submit"
-            app:backgroundTint="@color/dark_secondary" />
+            <Button
+                android:id="@+id/buttonASubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Submit"
+                app:backgroundTint="@color/dark_secondary" />
 
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

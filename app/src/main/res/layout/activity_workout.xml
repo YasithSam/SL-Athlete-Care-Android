@@ -88,8 +88,8 @@
                         android:id="@+id/tdddd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="8dp"
                         android:maxLines="4"
+                        android:paddingTop="8dp"
                         android:text="This is a power lifting schedule for athlete for lower body. There is no high weights because of the ankle injury. "
                         android:textSize="14sp" />
                 </LinearLayout>

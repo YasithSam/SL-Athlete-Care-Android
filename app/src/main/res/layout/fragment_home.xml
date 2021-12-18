@@ -56,11 +56,13 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/n_h"
                     style="@style/viewParent.headerText"
                     android:text="CPD Programme for GMOS members"
                     android:textSize="16sp" />
 
                 <ImageView
+                    android:id="@+id/n_i"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_marginTop="5dp"
@@ -69,6 +71,7 @@
                     android:src="@drawable/notice" />
 
                 <TextView
+                    android:id="@+id/n_d"
                     style="@style/miniTitle"
                     android:layout_marginTop="5dp"
                     android:maxLines="2"
@@ -199,6 +202,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/ccr"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -241,6 +245,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/ccf"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -283,6 +288,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cco"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
@@ -352,7 +358,7 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/ccaq"
+                            android:id="@+id/qa"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -395,6 +401,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/qc"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -437,6 +444,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/qr"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -479,6 +487,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/qf"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:layout_marginTop="20dp"
@@ -521,6 +530,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/qo"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
