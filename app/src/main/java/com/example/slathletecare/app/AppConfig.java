@@ -4,7 +4,7 @@ public class AppConfig {
 
     //Server base url
     //ipconfig getifaddr en0
-    public static String URL_BASE = "http://192.168.8.106/SL-athlete-care/api/v1";
+    public static String URL_BASE = "http://192.168.8.100/SL-athlete-care/api/v1";
 
     // Server user register url
     public static String URL_REGISTER = URL_BASE+"/SignUp.php";
@@ -83,6 +83,16 @@ public class AppConfig {
     public static String URL_GET_FORUM =URL_BASE+"/getUserForum.php";
 
     public static String URL_ADD_COMMENTS =URL_BASE+"/addComment.php";
+
+    public static String URL_ADD_REPORT =URL_BASE+"/addReport.php";
     public static String URL_GET_COMMENTS =URL_BASE+"/getComments.php";
+
+    public static String URL_GET_COMMENTS_POST=URL_BASE+"/getCommentsPost.php";
+
+    public static String URL_GET_FORUM_DETAILS =URL_BASE+"/getForum.php";
+    public static String  URL_ADD_COMMENTS_POST=URL_BASE+"/addForumComment.php";
+    public static String  URL_DELETE_BLOG=URL_BASE+"/deleteBlog.php";
+
+    public static String  URL_DELETE_COMMENTS_POST=URL_BASE+"/deleteForumPost.php";
 
 }
