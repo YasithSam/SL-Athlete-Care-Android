@@ -14,7 +14,7 @@ public class Article implements Serializable {
 
     private String status;
 
-    public Article(String heading, String description, String datetime, String likes, String comments, String url,String status,String id) {
+    public Article(String id,String heading, String description, String datetime, String likes, String comments, String url,String status) {
         this.heading = heading;
         this.description = description;
         this.datetime = datetime;
