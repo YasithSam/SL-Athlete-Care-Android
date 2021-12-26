@@ -1,11 +1,13 @@
 package com.example.slathletecare.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -41,6 +43,8 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 import static com.example.slathletecare.AppController.TAG;
 
 public class CommentsActivity extends AppCompatActivity {
@@ -60,6 +64,8 @@ public class CommentsActivity extends AppCompatActivity {
         c1=findViewById(R.id.cardView4);
         et=findViewById(R.id.editTextC);
         getSupportActionBar().hide();
+        Intent myIntent = getIntent();
+
         mAdapter = new CommentAdapter(sList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -74,8 +80,9 @@ public class CommentsActivity extends AppCompatActivity {
         c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String h = myIntent.getStringExtra("id");
                 String i2=et.getText().toString();
-                new CommentsActivity.AsyncAddComments().execute(i2);
+                new CommentsActivity.AsyncAddComments().execute(i2,h);
             }
         });
 
@@ -89,7 +96,7 @@ public class CommentsActivity extends AppCompatActivity {
         protected String doInBackground(String ... params) {
             try {
                 // Enter URL address where your php file resides
-                url = new URL(AppConfig.URL_ADD_SPORT);
+                url = new URL(AppConfig.URL_ADD_COMMENTS);
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
@@ -104,18 +111,12 @@ public class CommentsActivity extends AppCompatActivity {
                 // setDoInput and setDoOutput method depict handling of both send and receive
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
-//                $id=$_REQUEST['sport_id'];
-//                $a=$_REQUEST['athlete_id'];
-//                $i=$_REQUEST['institution'];
-//                $l=$_REQUEST['level'];
-//                $c=$_REQUEST['category'];
 
                 // Append parameters to URL
                 Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("sport",params[0])
-                        .appendQueryParameter("athlete_id","sl-ac-617e516484ac0")
-                        .appendQueryParameter("institution", params[1])
-                        .appendQueryParameter("level", params[2]);
+                        .appendQueryParameter("comment",params[0])
+                        .appendQueryParameter("post",params[1])
+                        .appendQueryParameter("id","sl-ac-617e516484ac0");
                 String query = builder.build().getEncodedQuery();
 
                 // Open connection for sending data
@@ -173,15 +174,25 @@ public class CommentsActivity extends AppCompatActivity {
             try{
                 JSONObject obj = new JSONObject(result);
                 if (obj.getString("status").equals("ok")) {
-                    startActivity(new Intent(AddSportActivity.this,SportActivity.class));
+                    AlertDialog alertDialog = new AlertDialog.Builder(CommentsActivity.this).create();
+                    alertDialog.setTitle("Successfully Added Comment!");
+                    alertDialog.setMessage("Your comment has being added successfully, Please wait until it is being approved");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    startActivity(new Intent(CommentsActivity.this,CommentsActivity.class));
+                                }
+                            });
+                    alertDialog.show();
 
                 }
                 else if (obj.getString("status").equals("n")) {
-                    Toast.makeText(AddSportActivity.this, "OOPs! Something went wrong. Connection Problem.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CommentsActivity.this, "OOPs! Something went wrong. Connection Problem.", Toast.LENGTH_LONG).show();
 
                 }
                 else if (obj.getString("status").equals("e")){
-                    Toast.makeText(AddSportActivity.this, "No data entered", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CommentsActivity.this, "No data entered", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -192,7 +203,9 @@ public class CommentsActivity extends AppCompatActivity {
 
         }
 
+
     }
+
 
 
     private class AsyncGetComments extends AsyncTask<Void,Void,Void> {
@@ -200,9 +213,11 @@ public class CommentsActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
+            Intent myIntent = getIntent();
+            String x = myIntent.getStringExtra("id");
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(AppConfig.URL_SPORTS+"?id=sl-ac-617e516484ac0");
+            String jsonStr = sh.makeServiceCall(AppConfig.URL_GET_COMMENTS+"?id="+x);
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
@@ -210,7 +225,7 @@ public class CommentsActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
                     // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("c");
+                    JSONArray data = jsonObj.getJSONArray("data");
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
                         Comment c= new Comment(st.getString("username"), st.getString("comment"), st.getString("datetime"));
