@@ -20,6 +20,7 @@ import java.util.List;
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyViewHolder>{
     private List<Article> qList;
+    private View.OnClickListener mOnItemClickListener;
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView heading;
         public TextView desc;
@@ -32,7 +33,12 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
             desc=(TextView) itemView.findViewById(R.id.q_des);
             comments=(TextView) itemView.findViewById(R.id.q_c);
             d=(TextView) itemView.findViewById(R.id.q_d);
+            itemView.setTag(this);
+            itemView.setOnClickListener(mOnItemClickListener);
         }
+    }
+    public void setOnItemClickListener(View.OnClickListener itemClickListener) {
+        mOnItemClickListener = itemClickListener;
     }
     public QuestionAdapter(List<Article> aList) {
         this.qList= aList;
