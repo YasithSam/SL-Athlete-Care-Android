@@ -65,8 +65,12 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.MyViewHo
         holder.desc.setText(a.getDescription());
         holder.likes.setText(a.getLikes());
         holder.d.setText(a.getDatetime());
-
-        Picasso.get().load(a.getUrl()).into(holder.imgUrl);
+        if(!a.getUrl().isEmpty()){
+            Picasso.get().load(a.getUrl()).into(holder.imgUrl);
+        }
+        else{
+            holder.imgUrl.setVisibility(View.GONE);
+        }
     }
 
     @Override
