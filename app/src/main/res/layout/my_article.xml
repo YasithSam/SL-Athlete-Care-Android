@@ -40,7 +40,15 @@
                     android:maxLines="1"
                     android:text="My article 1"
                     android:textColor="#000000"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/m_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TextView" />
 
                 <TextView
                     android:id="@+id/m_d"
@@ -64,11 +72,6 @@
                     android:clickable="true"
                     app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:srcCompat="@drawable/ic_baseline_delete_24" />
             </LinearLayout>
 
         </LinearLayout>

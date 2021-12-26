@@ -56,6 +56,36 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView35"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imageView4R"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            app:srcCompat="@drawable/ic_baseline_report_24" />
+
+                        <ImageView
+                            android:id="@+id/imageViewDeleteQuestion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            app:srcCompat="@drawable/ic_baseline_delete_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
@@ -73,15 +103,24 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/profileCircleImageView2"
                             app:layout_constraintTop_toBottomOf="@+id/toolbar16" />
+
                     </LinearLayout>
 
                 </LinearLayout>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:maxLines="10"
+                android:text="TextView" />
+
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="32dp"
                 android:fillViewport="true">
 
                 <LinearLayout
@@ -98,157 +137,10 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-                    <LinearLayout
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_c_2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:orientation="horizontal">
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:id="@+id/profileCircleImageView5"
-                                android:layout_width="100dp"
-                                android:layout_height="30dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_weight="1"
-                                android:src="@drawable/user_dp"
-                                app:civ_border_color="@color/imageBorderColor"
-                                app:civ_border_width="2dp" />
-
-                            <TextView
-                                android:id="@+id/tv_header"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="8dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/roboto"
-                                android:maxLines="1"
-                                android:text="Clara Menard"
-                                android:textColor="#000000"
-                                android:textSize="18sp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/textView38"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:orientation="horizontal">
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="100dp"
-                                android:layout_height="30dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_weight="1"
-                                android:src="@drawable/user_dp"
-                                app:civ_border_color="@color/imageBorderColor"
-                                app:civ_border_width="2dp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="8dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/roboto"
-                                android:maxLines="1"
-                                android:text="Clara Menard"
-                                android:textColor="#000000"
-                                android:textSize="18sp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:orientation="horizontal">
-
-                            <de.hdodenhof.circleimageview.CircleImageView
-                                android:layout_width="100dp"
-                                android:layout_height="30dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_weight="1"
-                                android:src="@drawable/user_dp"
-                                app:civ_border_color="@color/imageBorderColor"
-                                app:civ_border_width="2dp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="8dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/roboto"
-                                android:maxLines="1"
-                                android:text="Clara Menard"
-                                android:textColor="#000000"
-                                android:textSize="18sp" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." />
-                    </LinearLayout>
+                        android:layout_height="wrap_content" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -261,16 +153,16 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
                             android:ems="10"
                             android:hint="Write a comment"
                             android:inputType="textPersonName"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/cardView4"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            app:layout_constraintEnd_toStartOf="@+id/cardView44"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <androidx.cardview.widget.CardView
-                            android:id="@+id/cardView4"
+                            android:id="@+id/cardView44"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"

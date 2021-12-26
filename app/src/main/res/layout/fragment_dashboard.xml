@@ -43,7 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
             android:gravity="center_horizontal"
-            android:text="Username"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
