@@ -66,7 +66,7 @@ public class QuestionOneActivity extends AppCompatActivity {
         c1=findViewById(R.id.cardView44);
         et=findViewById(R.id.editText4);
         i4=findViewById(R.id.imageView4R);
-        iD=findViewById(R.id.imageViewPostDelete);
+        iD=findViewById(R.id.imageViewDeleteQuestion);
         getSupportActionBar().hide();
         Intent myIntent = getIntent();
         String h = myIntent.getStringExtra("h");
@@ -135,7 +135,7 @@ public class QuestionOneActivity extends AppCompatActivity {
         protected String doInBackground(String ... params) {
             try {
                 // Enter URL address where your php file resides
-                url = new URL(AppConfig.URL_DELETE_BLOG+"id=?"+getIntent().getStringExtra("id"));
+                url = new URL(AppConfig.URL_DELETE_BLOG+"?id="+getIntent().getStringExtra("id"));
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
