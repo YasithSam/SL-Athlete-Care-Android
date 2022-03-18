@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.slathletecare.R;
 import com.example.slathletecare.app.AppConfig;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,7 +46,14 @@ public class AddSportActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         eI=findViewById(R.id.et_i);
         bt1=findViewById(R.id.btn_s_add);
-
+        FloatingActionButton fab=findViewById(R.id.b_sport_add);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                AddSportActivity.super.onBackPressed();
+            }
+        });
         String[] sports = { "Cricket", "Football", "Athletics", "Rugby", "Other" };
         spin = (Spinner) findViewById(R.id.sp1);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,sports);

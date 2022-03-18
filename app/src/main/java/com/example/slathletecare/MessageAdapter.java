@@ -19,13 +19,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         //public boolean status;
-        public TextView fromUser;
-        public TextView topMessage;
+        public TextView message;
         //public String imgUrl;
         public MyViewHolder(View itemView) {
             super(itemView);
-            fromUser=(TextView) itemView.findViewById(R.id.tv_chatName);
-            topMessage=(TextView) itemView.findViewById(R.id.tv_chatTop);
+            message=(TextView) itemView.findViewById(R.id.t_message);
 
         }
     }
@@ -38,16 +36,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     @Override
     public MessageAdapter.MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.conversation_item, parent, false);
+                .inflate(R.layout.message_item, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull MessageAdapter.MyViewHolder holder, int position) {
         Conversation c= conversationList.get(position);
-        holder.fromUser.setText(c.getFromUser());
-        holder.topMessage.setText(c.getTopMessage());
-    
+        holder.message.setText(c.getMessage());
 
     }
 

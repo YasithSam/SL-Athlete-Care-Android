@@ -19,6 +19,7 @@ import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Articles;
 import com.example.slathletecare.model.Sport;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +42,14 @@ public class SportActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rv_sports);
         getSupportActionBar().hide();
         bt1=findViewById(R.id.button222);
+        FloatingActionButton fab=findViewById(R.id.b_sport);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                SportActivity.super.onBackPressed();
+            }
+        });
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

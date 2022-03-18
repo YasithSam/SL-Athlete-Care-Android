@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/f_advice7"
+            android:id="@+id/b_sport_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"

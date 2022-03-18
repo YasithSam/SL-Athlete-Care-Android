@@ -3,6 +3,7 @@ package com.example.slathletecare.casestudy.inner;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,12 +25,14 @@ public class DietEventsAdapter extends RecyclerView.Adapter<DietEventsAdapter.My
         public TextView event_diet_heading;
         public TextView event_diet_body;
         public TextView event_diet_amount;
+        public ImageView event_image;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             event_diet_heading= (TextView) itemView.findViewById(R.id.event_diet_heading);
             event_diet_body = (TextView) itemView.findViewById(R.id.event_diet_body);
             event_diet_amount = (TextView) itemView.findViewById(R.id.event_diet_amount);
+
             itemView.setTag(this);
             itemView.setOnClickListener(mOnItemClickListener);
 

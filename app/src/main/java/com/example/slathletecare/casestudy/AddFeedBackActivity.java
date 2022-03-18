@@ -17,6 +17,8 @@ import com.example.slathletecare.R;
 import com.example.slathletecare.activity.AddSportActivity;
 import com.example.slathletecare.activity.SportActivity;
 import com.example.slathletecare.app.AppConfig;
+import com.example.slathletecare.tabbed.FAActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,9 +48,18 @@ public class AddFeedBackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_feed_back);
+        getSupportActionBar().hide();
         s=(Spinner) findViewById(R.id.spf);
         btnf=findViewById(R.id.btn_f_add);
         etf=findViewById(R.id.et_f);
+        FloatingActionButton fab=findViewById(R.id.f_add_f_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                AddFeedBackActivity.super.onBackPressed();
+            }
+        });
         spinner.put(1,"Medicine");
         spinner.put(4,"Diet Schedule");
         spinner.put(3,"Workout Schedule");

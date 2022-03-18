@@ -13,6 +13,7 @@ import com.example.slathletecare.ForgetPassword;
 import com.example.slathletecare.R;
 import com.example.slathletecare.activity.InjuryActivity;
 import com.example.slathletecare.activity.LoginActivity;
+import com.example.slathletecare.activity.PrivacyActivity;
 import com.example.slathletecare.helper.SessionManager;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -26,7 +27,9 @@ public class ProfileActivity extends AppCompatActivity {
         t1=findViewById(R.id.tv_edit);
         t2=findViewById(R.id.tv_change);
         t3=findViewById(R.id.tv_lgout);
+        t4=findViewById(R.id.textView577);
         getSupportActionBar().hide();
+        sessionManager =  new SessionManager(getApplicationContext());
 
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,10 +48,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sessionManager.logoutUser();
+                finish();
 
-
-
-
+            }
+        });
+        t4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, PrivacyActivity.class));
             }
         });
     }

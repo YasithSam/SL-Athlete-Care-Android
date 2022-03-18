@@ -27,9 +27,10 @@ public class SessionManager {
 
     private static final String IS_LOGIN = "isLoggedIn";
 
-    public static String username="";
+    public static String username="Mahesh123";
 
-    public static String userId="";
+    public static String userId="sl-ac-617e516484ac0";
+
 
 
     public SessionManager(Context context) {
@@ -50,6 +51,8 @@ public class SessionManager {
         editor.commit();
     }
 
+
+
     public void logoutUser(){
         // Clearing all data from Shared Preferences
         editor.clear();
@@ -65,6 +68,7 @@ public class SessionManager {
 
         // Staring Login Activity
         _context.startActivity(i);
+
     }
     /**
      * Get stored session data
@@ -94,6 +98,7 @@ public class SessionManager {
         }
 
     }
+
     public boolean isLoggedIn(){
         return pref.getBoolean(IS_LOGIN, false);
     }

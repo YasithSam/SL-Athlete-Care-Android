@@ -143,8 +143,7 @@ public class AddImageActivity extends AppCompatActivity {
 
                 // Setting image as transparent after done uploading.
                 imageView.setImageResource(android.R.color.transparent);
-
-
+                startActivity(new Intent(AddImageActivity.this,ImageActivity.class));
             }
 
             @Override

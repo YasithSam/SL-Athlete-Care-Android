@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.slathletecare.R;
 import com.example.slathletecare.activity.ArticleOneActivity;
 import com.example.slathletecare.activity.ForumOneActivity;
+import com.example.slathletecare.activity.HealthActivity;
 import com.example.slathletecare.activity.ItemAllActivity;
 import com.example.slathletecare.activity.SportActivity;
 import com.example.slathletecare.activity.SportsAdapter;
@@ -23,6 +24,7 @@ import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Article;
 import com.example.slathletecare.model.ForumEvent;
 import com.example.slathletecare.model.Sport;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +46,14 @@ public class FormDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_form_details);
         getSupportActionBar().hide();
         recyclerView = (RecyclerView) findViewById(R.id.rv_forum);
+        FloatingActionButton fab=findViewById(R.id.f_details_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                FormDetailsActivity.super.onBackPressed();
+            }
+        });
         mAdapter = new ForumAdapter(sList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);

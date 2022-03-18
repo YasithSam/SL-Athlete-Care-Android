@@ -63,6 +63,7 @@ public class DietAdapter extends RecyclerView.Adapter<DietAdapter.MyViewHolder> 
     }
 
     public void setOnItemClickListener(View.OnClickListener itemClickListener) {
+
         mOnItemClickListener = itemClickListener;
     }
 

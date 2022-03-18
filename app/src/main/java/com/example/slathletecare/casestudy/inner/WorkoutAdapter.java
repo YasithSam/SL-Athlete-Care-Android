@@ -38,7 +38,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
             d = (TextView) itemView.findViewById(R.id.w_d);
             c1= (CardView) itemView.findViewById(R.id.cccx);
             l1=(LinearLayout) itemView.findViewById(R.id.l1) ;
-            arrow=(ImageButton) itemView.findViewById(R.id.arrow_button);
+         
             itemView.setTag(this);
             itemView.setOnClickListener(mOnItemClickListener);
 

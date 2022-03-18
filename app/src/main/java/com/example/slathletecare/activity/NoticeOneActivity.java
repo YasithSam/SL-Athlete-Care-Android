@@ -43,9 +43,6 @@ public class NoticeOneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notice_one);
         getSupportActionBar().hide();
         recyclerView = (RecyclerView) findViewById(R.id.rv_n_n);
-        i1=findViewById(R.id.imageView9);
-        tv1=findViewById(R.id.textView37);
-        tv2=findViewById(R.id.textView42);
         new NoticeOneActivity.AsyncGetAll().execute();
         mAdapter = new ArticleAdapter(list);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -118,15 +115,6 @@ public class NoticeOneActivity extends AppCompatActivity {
             super.onPostExecute(result);
             // Dismiss the progress dialog
             mAdapter.notifyDataSetChanged();
-            int p=getIntent().getIntExtra("id",0);
-            if(list.get(p).getUrl().isEmpty()){
-                i1.setVisibility(View.GONE);
-            }
-            else{
-                Picasso.get().load(list.get(p).getUrl()).into(i1);
-            }
-            tv1.setText(list.get(p).getHeading());
-            tv2.setText(list.get(p).getDescription());
 
         }
     }

@@ -24,6 +24,7 @@ import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Comment;
 import com.example.slathletecare.ui.FormDetailsActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -71,13 +72,22 @@ public class ForumOneActivity extends AppCompatActivity {
         t5=findViewById(R.id.forum_one_i);
         recyclerView=findViewById(R.id.rv_f_2);
         c1=findViewById(R.id.cardView444);
-        i1=findViewById(R.id.imageViewPostEdit);
+
         i2=findViewById(R.id.imageViewPostDelete);
 
         i2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 withConfirmButton();
+            }
+        });
+
+        FloatingActionButton fab=findViewById(R.id.f_one_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                ForumOneActivity.super.onBackPressed();
             }
         });
 
@@ -139,7 +149,7 @@ public class ForumOneActivity extends AppCompatActivity {
         protected String doInBackground(String ... params) {
             try {
                 // Enter URL address where your php file resides
-                url = new URL(AppConfig.URL_DELETE_COMMENTS_POST+"id=?"+getIntent().getStringExtra("id"));
+                url = new URL(AppConfig.URL_DELETE_COMMENTS_POST+"?id="+getIntent().getStringExtra("id"));
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
@@ -192,21 +202,12 @@ public class ForumOneActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            startActivity(new Intent(ForumOneActivity.this,FormDetailsActivity.class));
+            finish();
 
             try{
+
                 JSONObject obj = new JSONObject(result);
-
-                    AlertDialog alertDialog = new AlertDialog.Builder(ForumOneActivity.this).create();
-                    alertDialog.setTitle("Successfully Deleted Comment!");
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    dialog.dismiss();
-                                    startActivity(new Intent(ForumOneActivity.this, FormDetailsActivity.class));
-                                }
-                            });
-                    alertDialog.show();
-
 
                 if (obj.getString("status").equals("n")) {
                     Toast.makeText(ForumOneActivity.this, "OOPs! Something went wrong. Connection Problem.", Toast.LENGTH_LONG).show();
@@ -215,6 +216,7 @@ public class ForumOneActivity extends AppCompatActivity {
                 else if (obj.getString("status").equals("e")){
                     Toast.makeText(ForumOneActivity.this, "No data entered", Toast.LENGTH_LONG).show();
                 }
+
 
             }
             catch (JSONException jsonException){
@@ -372,12 +374,12 @@ public class ForumOneActivity extends AppCompatActivity {
                     JSONArray data = jsonObj.getJSONArray("data");
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
-                        Comment c= new Comment(st.getString("username"), st.getString("comment"), st.getString("date"));
+                        Comment c= new Comment(st.getString("username"), st.getString("comment"), st.getString("date")+" Hours Ago");
                         sList.add(c);
                         int len = data.length();
                         for (int i=1;i<len;i++){
                             JSONObject ct=data.getJSONObject(i);
-                            c=new Comment(ct.getString("username"), ct.getString("comment"), ct.getString("date"));
+                            c=new Comment(ct.getString("username"), ct.getString("comment"), ct.getString("date")+" Hours Ago");
                             sList.add(c);
                         }
                     }

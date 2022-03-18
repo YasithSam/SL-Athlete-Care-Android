@@ -1,7 +1,7 @@
 package com.example.slathletecare.model;
 
 
-public class DietEvent {
+public class  DietEvent {
     private String title;
     private String desc;
     private String type;

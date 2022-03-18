@@ -25,9 +25,11 @@ import com.example.slathletecare.activity.SportsAdapter;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.casestudy.CaseStudyItemActivity;
+import com.example.slathletecare.casestudy.FeedbackActivity;
 import com.example.slathletecare.model.CaseStudy;
 import com.example.slathletecare.model.Sport;
 import com.example.slathletecare.model.WorkoutEvent;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,8 +61,16 @@ public class WorkoutActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        FloatingActionButton fab=findViewById(R.id.f_w_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                WorkoutActivity.super.onBackPressed();
+            }
+        });
         new AsyncGetWorkoutEvents().execute();
-        mAdapter.setOnItemClickListener(onItemClickListener);
+
 
 
 //        arrow.setOnClickListener(new View.OnClickListener() {
@@ -112,29 +122,7 @@ public class WorkoutActivity extends AppCompatActivity {
 //            }
 //        });
     }
-    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
-            int position = viewHolder.getAbsoluteAdapterPosition();
-            if (hiddenView.getVisibility() == View.VISIBLE) {
-                    TransitionManager.beginDelayedTransition(cardView,
-                            new AutoTransition());
-                    hiddenView.setVisibility(View.GONE);
 
-                }
-
-                else {
-
-                    TransitionManager.beginDelayedTransition(cardView,
-                            new AutoTransition());
-                    hiddenView.setVisibility(View.VISIBLE);
-                    arrow.setImageResource(R.drawable.ic_baseline_expand_less_24);
-                }
-
-
-        }
-    };
 
         private class AsyncGetWorkoutEvents extends AsyncTask<Void,Void,Void> {
 

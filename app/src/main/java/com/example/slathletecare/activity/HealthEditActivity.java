@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.slathletecare.R;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.helper.SessionManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,8 +52,15 @@ public class HealthEditActivity extends AppCompatActivity {
         sessionManager =  new SessionManager(getApplicationContext());
         sessionManager.checkLogin();
         HashMap<String, String> user = sessionManager.getUserDetails();
-        String id=user.get(SessionManager.username);
-
+        String id=user.get(SessionManager.userId);
+        FloatingActionButton fab=findViewById(R.id.h_add);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                HealthEditActivity.super.onBackPressed();
+            }
+        });
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

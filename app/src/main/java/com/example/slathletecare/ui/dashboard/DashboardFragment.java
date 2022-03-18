@@ -55,7 +55,7 @@ public class DashboardFragment extends Fragment {
         View root = binding.getRoot();
         tvName=root.findViewById(R.id.tvName);
         tvSport=root.findViewById(R.id.tvSport);
-        tvName.setText(user.get(SessionManager.userId));
+        tvName.setText(user.get(SessionManager.username));
         c=root.findViewById(R.id.cc);
         c1=root.findViewById(R.id.cc2);
         c2=root.findViewById(R.id.cc3);

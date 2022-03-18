@@ -103,55 +103,6 @@
                     android:text="Mental health refers to cognitive, behavioral, and emotional well-being."
                     android:textColor="@color/featuredNewsContentColor" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/outlinedButton4"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_weight="1"
-                        android:text="Cricketer"
-                        android:textColor="@color/dark"
-                        android:textSize="8sp"
-                        app:cornerRadius="16dp"
-                        app:strokeColor="@color/dark" />
-
-                    <Button
-                        android:id="@+id/outlinedButton3"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        android:text="Mental"
-                        android:textColor="@color/dark"
-                        android:textSize="8sp"
-                        app:cornerRadius="16dp"
-                        app:strokeColor="@color/dark" />
-
-                    <Button
-                        android:id="@+id/outlinedButton2"
-                        style="?attr/materialButtonOutlinedStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_weight="1"
-                        android:text="Motivation"
-                        android:textColor="@color/dark"
-                        android:textSize="8sp"
-                        app:cornerRadius="16dp"
-                        app:strokeColor="@color/dark" />
-
-                </LinearLayout>
-
 
             </LinearLayout>
 

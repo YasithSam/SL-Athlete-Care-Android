@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +17,10 @@ import com.example.slathletecare.activity.SportActivity;
 import com.example.slathletecare.activity.SportsAdapter;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
+import com.example.slathletecare.casestudy.AddFeedBackActivity;
 import com.example.slathletecare.model.Medicine;
 import com.example.slathletecare.model.Sport;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,6 +43,14 @@ public class MedicineActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         tvH=findViewById(R.id.tv_m_h);
         tvD=findViewById(R.id.tv_m_d);
+        FloatingActionButton fab=findViewById(R.id.f_m_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                MedicineActivity.super.onBackPressed();
+            }
+        });
         mAdapter = new MedicineAdapter(mList);
         recyclerView = (RecyclerView) findViewById(R.id.rv_m_m);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());

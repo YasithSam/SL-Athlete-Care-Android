@@ -11,12 +11,13 @@ import android.widget.Button;
 import com.developer.kalert.KAlertDialog;
 import com.example.slathletecare.OTPActivity;
 import com.example.slathletecare.R;
-
+import com.onesignal.OneSignal;
 
 
 public class IntroActivity extends AppCompatActivity {
     private Button btnLog;
     private Button btnReg;
+    //private static final String ONESIGNAL_APP_ID = "b80f6774-4e66-4724-849d-330fccdf7cb1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,5 +42,10 @@ public class IntroActivity extends AppCompatActivity {
 
             }
         });
+        //OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        // OneSignal.initWithContext(this);
+        //OneSignal.setAppId(ONESIGNAL_APP_ID);
     }
 }

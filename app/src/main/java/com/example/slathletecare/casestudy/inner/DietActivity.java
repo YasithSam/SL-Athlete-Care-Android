@@ -23,6 +23,7 @@ import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.DietEvent;
 import com.example.slathletecare.model.Sport;
 import com.example.slathletecare.model.WorkoutEvent;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,7 +48,7 @@ public class DietActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diet);
         cardView = findViewById(R.id.cccxd);
-        arrow = findViewById(R.id.arrow_buttond);
+
         hiddenView = findViewById(R.id.l3);
         getSupportActionBar().hide();
         recyclerView=findViewById(R.id.xx);
@@ -58,6 +59,14 @@ public class DietActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        FloatingActionButton fab=findViewById(R.id.f_d_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                DietActivity.super.onBackPressed();
+            }
+        });
         new AsyncGetDietEvents().execute();
 //        arrow.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -111,6 +120,8 @@ public class DietActivity extends AppCompatActivity {
 
 
     }
+
+
     private class AsyncGetDietEvents extends AsyncTask<Void,Void,Void> {
 
         @Override
@@ -129,12 +140,12 @@ public class DietActivity extends AppCompatActivity {
                     JSONArray data = jsonObj.getJSONArray("data");
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
-                            DietEvent s = new DietEvent(st.getString("title"), st.getString("description"), st.getString("amount"));
+                            DietEvent s = new DietEvent(st.getString("title"), st.getString("descritption"), st.getString("amount"));
                             sList.add(s);
                             int len = data.length();
                             for (int i = 1; i < len; i++) {
                                 JSONObject s2 = data.getJSONObject(i);
-                                s = new DietEvent(s2.getString("title"), s2.getString("description"), s2.getString("amount"));
+                                s = new DietEvent(s2.getString("title"), s2.getString("descritption"), s2.getString("amount"));
                                 sList.add(s);
                             }
 

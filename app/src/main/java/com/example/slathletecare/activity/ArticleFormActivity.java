@@ -23,6 +23,7 @@ import com.example.slathletecare.R;
 import com.example.slathletecare.casestudy.inner.AddImageActivity;
 import com.example.slathletecare.casestudy.inner.ImageActivity;
 import com.example.slathletecare.tabbed.FAActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -51,7 +52,7 @@ public class ArticleFormActivity extends AppCompatActivity {
     ProgressDialog progressDialog ;
     String ImagePath = "image_path" ;
     boolean check = true;
-    String ServerUploadPath ="http://192.168.8.106/SL-athlete-care/api/v1/addArticle.php" ;
+    String ServerUploadPath ="http://192.168.8.143/SL-athlete-care/api/v1/addArticle.php" ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,14 @@ public class ArticleFormActivity extends AppCompatActivity {
         eDesc=findViewById(R.id.editTextDescription);
         SelectImageArticle=findViewById(R.id.buttonAImages);
         imageView=findViewById(R.id.IVPreviewImageArticle);
+        FloatingActionButton fab=findViewById(R.id.f_a_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                ArticleFormActivity.super.onBackPressed();
+            }
+        });
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,sports);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spA.setAdapter(adapter);
@@ -240,6 +249,7 @@ public class ArticleFormActivity extends AppCompatActivity {
                         stringBuilder.append(RC2);
                     }
                     startActivity(new Intent(ArticleFormActivity.this, FAActivity.class));
+                    finish();
                 }
 
             } catch (Exception e) {

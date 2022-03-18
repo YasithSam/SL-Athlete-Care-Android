@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 import com.example.slathletecare.R;
 import com.example.slathletecare.app.AppConfig;
+import com.example.slathletecare.helper.SessionManager;
 import com.example.slathletecare.tabbed.FAActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,15 +32,18 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 public class QuestionFormActivity extends AppCompatActivity {
     EditText et1,et2;
     Spinner s;
     Button btn1;
+    SessionManager sessionManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_form);
+        getSupportActionBar().hide();
         et1=findViewById(R.id.editTextTitleQ);
         et2=findViewById(R.id.editTextDescriptionQ);
         String[] sports = { "Cricket", "Football", "Athletics", "Rugby", "Other" };
@@ -47,6 +52,14 @@ public class QuestionFormActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,sports);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);
+        FloatingActionButton fab=findViewById(R.id.f_q_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                QuestionFormActivity.super.onBackPressed();
+            }
+        });
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +67,7 @@ public class QuestionFormActivity extends AppCompatActivity {
                 String i1=s.getSelectedItem().toString();
                 String i2=et1.getText().toString();
                 String i3=et2.getText().toString();
-                if(i2.isEmpty() || i1.isEmpty() | i3.isEmpty()){
+                if(i2.isEmpty() || i1.isEmpty() || i3.isEmpty()){
                     Toast.makeText(QuestionFormActivity.this, "Please fill all the fields", Toast.LENGTH_LONG).show();
                 }
                 else{
@@ -95,9 +108,15 @@ public class QuestionFormActivity extends AppCompatActivity {
 //                $c=$_REQUEST['category'];
 
                 // Append parameters to URL
+                sessionManager =  new SessionManager(getApplicationContext());
+
+
+                // get user data from session
+                HashMap<String, String> user = sessionManager.getUserDetails();
+
                 Uri.Builder builder = new Uri.Builder()
                         .appendQueryParameter("sport",params[0])
-                        .appendQueryParameter("id","sl-ac-617e516484ac0")
+                        .appendQueryParameter("id",user.get(SessionManager.username))
                         .appendQueryParameter("heading", params[1])
                         .appendQueryParameter("desc", params[2]);
                 String query = builder.build().getEncodedQuery();
@@ -158,6 +177,7 @@ public class QuestionFormActivity extends AppCompatActivity {
                 JSONObject obj = new JSONObject(result);
                 if (obj.getString("status").equals("ok")) {
                     startActivity(new Intent(QuestionFormActivity.this, FAActivity.class));
+                    finish();
 
                 }
                 else if (obj.getString("status").equals("n")) {

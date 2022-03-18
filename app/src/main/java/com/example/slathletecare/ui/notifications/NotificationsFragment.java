@@ -26,6 +26,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.slathletecare.MessageAdapter;
 import com.example.slathletecare.MessageProfile;
 import com.example.slathletecare.R;
+import com.example.slathletecare.activity.ArticleOneActivity;
+import com.example.slathletecare.activity.ItemAllActivity;
 import com.example.slathletecare.activity.LoginActivity;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.databinding.FragmentNotificationsBinding;
@@ -55,7 +57,7 @@ public class NotificationsFragment extends Fragment {
     private FragmentNotificationsBinding binding;
     private RecyclerView recyclerView;
     private MessageAdapter mAdapter;
-    LinearLayout l1,l2,l3;
+    LinearLayout l1,l2,l3,l4;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
@@ -68,24 +70,45 @@ public class NotificationsFragment extends Fragment {
         l1=root.findViewById(R.id.l1);
         l2=root.findViewById(R.id.l2);
         l3=root.findViewById(R.id.l3);
+        l4=root.findViewById(R.id.l11);
         l1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MessageOneActivity.class));
+                Intent myIntent = new Intent(getActivity(), MessageOneActivity.class);
+                myIntent.putExtra("sport","Rugby");
+                myIntent.putExtra("Id","3");
+                startActivity(myIntent);
+
             }
         });
         l2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MessageOneActivity.class));
+                Intent myIntent = new Intent(getActivity(), MessageOneActivity.class);
+                myIntent.putExtra("sport","Football");
+                myIntent.putExtra("Id","4");
+                startActivity(myIntent);
             }
         });
         l3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MessageOneActivity.class));
+                Intent myIntent = new Intent(getActivity(), MessageOneActivity.class);
+                myIntent.putExtra("sport","Cricket");
+                myIntent.putExtra("Id","1");
+                startActivity(myIntent);
             }
         });
+        l4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(getActivity(), MessageOneActivity.class);
+                myIntent.putExtra("sport","Athletics");
+                myIntent.putExtra("Id","2");
+                startActivity(myIntent);
+            }
+        });
+
 
 
 

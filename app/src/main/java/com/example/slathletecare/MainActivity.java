@@ -13,8 +13,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.slathletecare.databinding.ActivityMainBinding;
+import com.onesignal.OneSignal;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String ONESIGNAL_APP_ID = "b80f6774-4e66-4724-849d-330fccdf7cb1";
 
     private ActivityMainBinding binding;
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
     }
 
 }

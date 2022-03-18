@@ -16,9 +16,11 @@ import android.widget.Toast;
 import com.example.slathletecare.R;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
+import com.example.slathletecare.casestudy.FeedbackActivity;
 import com.example.slathletecare.model.Image;
 import com.example.slathletecare.model.Sport;
 import com.example.slathletecare.model.WorkoutEvent;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,6 +48,14 @@ public class ImageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ImageActivity.this,AddImageActivity.class));
+            }
+        });
+        FloatingActionButton fab=findViewById(R.id.f_img_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                ImageActivity.super.onBackPressed();
             }
         });
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);

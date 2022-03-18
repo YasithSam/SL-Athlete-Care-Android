@@ -15,17 +15,20 @@ import com.example.slathletecare.activity.HealthActivity;
 import com.example.slathletecare.activity.SportActivity;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
+import com.example.slathletecare.helper.SessionManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MyDetailsActivity extends AppCompatActivity {
    TextView tvG;
     TextView tvG2;
     TextView name,mail,nic,address,gender,age,city,r_email;
     ProgressDialog pDialog;
+    SessionManager sessionManager;
     public ArrayList<String> dList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,9 +88,10 @@ public class MyDetailsActivity extends AppCompatActivity {
        @Override
        protected Void doInBackground(Void... arg0) {
            HttpHandler sh = new HttpHandler();
-
+           sessionManager =  new SessionManager(getApplicationContext());
+           HashMap<String, String> user = sessionManager.getUserDetails();
            // Making a request to url and getting response
-           String jsonStr = sh.makeServiceCall(AppConfig.URL_USER+"?"+"id="+"sl-ac-617e516484ac0");
+           String jsonStr = sh.makeServiceCall(AppConfig.URL_USER+"?"+"id="+user.get(SessionManager.userId));
 
            Log.e("tag", "Response from url: " + jsonStr);
            if (jsonStr != null) {

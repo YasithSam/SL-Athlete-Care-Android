@@ -38,7 +38,7 @@
                 <TextView
                     android:id="@+id/tv_a_a"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
@@ -50,13 +50,15 @@
                 <TextView
                     android:id="@+id/tv_a_d"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="4dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
                     android:maxLines="1"
+                    android:paddingBottom="8dp"
                     android:text="There can be few things you need to consider like bandgaes when you are practising and it is necessary to have a ankle guard when practising."
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    app:autoSizeTextType="uniform" />
 
             </LinearLayout>
 

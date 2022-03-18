@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.slathletecare.R;
@@ -15,6 +16,7 @@ import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Advice;
 import com.example.slathletecare.model.Medicine;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,6 +43,14 @@ public class AdviceActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
+        FloatingActionButton fab=findViewById(R.id.f_advice);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                AdviceActivity.super.onBackPressed();
+            }
+        });
         new AdviceActivity.AsyncGetAdvice().execute();
 
     }

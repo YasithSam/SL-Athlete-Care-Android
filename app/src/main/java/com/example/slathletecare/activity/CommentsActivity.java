@@ -228,12 +228,12 @@ public class CommentsActivity extends AppCompatActivity {
                     JSONArray data = jsonObj.getJSONArray("data");
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
-                        Comment c= new Comment(st.getString("username"), st.getString("comment"), st.getString("datetime"));
+                        Comment c= new Comment(st.getString("username"), st.getString("comment"), st.getString("datetime")+" Hours Ago");
                         sList.add(c);
                         int len = data.length();
                         for (int i=1;i<len;i++){
                             JSONObject ct=data.getJSONObject(i);
-                            c=new Comment(ct.getString("username"), ct.getString("comment"), ct.getString("datetime"));
+                            c=new Comment(ct.getString("username"), ct.getString("comment"), ct.getString("datetime")+" Hours Ago");
                             sList.add(c);
                         }
                     }

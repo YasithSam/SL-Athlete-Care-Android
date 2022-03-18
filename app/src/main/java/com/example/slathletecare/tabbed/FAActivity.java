@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.slathletecare.R;
@@ -15,6 +16,8 @@ import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Article;
 import com.example.slathletecare.model.Sport;
+import com.example.slathletecare.ui.FormDetailsActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
@@ -45,7 +48,14 @@ public class FAActivity extends AppCompatActivity {
         tab2 = findViewById(R.id.tab2);
         viewPager = findViewById(R.id.viewPager);
         getSupportActionBar().hide();
-
+        FloatingActionButton fab=findViewById(R.id.f_article_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                FAActivity.super.onBackPressed();
+            }
+        });
         new FAActivity.AsyncGet().execute();
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount(),aList,qList);
 

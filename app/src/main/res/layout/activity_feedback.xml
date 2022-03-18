@@ -7,7 +7,7 @@
     tools:context=".casestudy.FeedbackActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/f_advice20"
+        android:id="@+id/f_feedback_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,14 +33,13 @@
         android:id="@+id/tv_heading_one14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:text="Feedbacks"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar23"
-        app:layout_constraintHorizontal_bias="0.314"
-        app:layout_constraintStart_toEndOf="@+id/f_advice20"
+        app:layout_constraintStart_toEndOf="@+id/f_feedback_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

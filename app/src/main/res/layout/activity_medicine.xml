@@ -7,7 +7,7 @@
     tools:context=".casestudy.inner.MedicineActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/f_advice11"
+        android:id="@+id/f_m_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,13 +33,13 @@
         android:id="@+id/tv_heading_one7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
         android:text="Medicine"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/f_advice11"
+        app:layout_constraintStart_toEndOf="@+id/f_m_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView

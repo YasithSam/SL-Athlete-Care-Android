@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "530987804930",
+    "project_id": "sl-athlete-care",
+    "storage_bucket": "sl-athlete-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530987804930:android:b4bf4f908d01e544863a1b",
+        "android_client_info": {
+          "package_name": "com.example.slathletecare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530987804930-8451bf4g64hum6fmaj6j4811cf1ajcqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMtDcTm3a_nurHzZ4hnw86i_l7vmXlA0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530987804930-8451bf4g64hum6fmaj6j4811cf1ajcqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

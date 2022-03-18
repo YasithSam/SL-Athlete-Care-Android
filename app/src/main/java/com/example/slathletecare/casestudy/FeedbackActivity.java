@@ -19,6 +19,8 @@ import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.casestudy.inner.DietActivity;
 import com.example.slathletecare.model.Sport;
 import com.example.slathletecare.model.feedback;
+import com.example.slathletecare.tabbed.FAActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,6 +42,14 @@ public class FeedbackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
         getSupportActionBar().hide();
+        FloatingActionButton fab=findViewById(R.id.f_feedback_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                FeedbackActivity.super.onBackPressed();
+            }
+        });
         new AsyncGetFeedbacks().execute();
         setUpList();
         btn4=findViewById(R.id.button444);
@@ -71,14 +81,15 @@ public class FeedbackActivity extends AppCompatActivity {
                     JSONObject jsonObj = new JSONObject(jsonStr);
                     // Getting JSON Array node
                     JSONArray data = jsonObj.getJSONArray("data");
+
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
-                        feedback f = new feedback(st.getString("type"), st.getString("feedback"), st.getString("datetime"));
+                        feedback f = new feedback(st.getString("type"), st.getString("feedback"), st.getString("datetime")+" Hours Ago");
                         fList.add(f);
                         int len = data.length();
                         for (int i=1;i<len;i++){
                             JSONObject ft=data.getJSONObject(i);
-                            f=new feedback(ft.getString("type"), ft.getString("feedback"), ft.getString("datetime"));
+                            f=new feedback(ft.getString("type"), ft.getString("feedback"), ft.getString("datetime")+" Hours Ago");
                             fList.add(f);
                         }
                     }
@@ -117,6 +128,7 @@ public class FeedbackActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             // Dismiss the progress dialog
+            setUpList();
 
         }
     }
