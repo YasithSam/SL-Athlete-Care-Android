@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyViewHolder>{
@@ -36,6 +37,14 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
             itemView.setTag(this);
             itemView.setOnClickListener(mOnItemClickListener);
         }
+    }
+    public void filterList(ArrayList<Article> filterllist) {
+        // below line is to add our filtered
+        // list in our course array list.
+        qList = filterllist;
+        // below line is to notify our adapter
+        // as change in recycler view data.
+        notifyDataSetChanged();
     }
     public void setOnItemClickListener(View.OnClickListener itemClickListener) {
         mOnItemClickListener = itemClickListener;

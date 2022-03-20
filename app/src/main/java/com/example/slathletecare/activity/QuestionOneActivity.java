@@ -25,6 +25,7 @@ import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Article;
 import com.example.slathletecare.model.Comment;
 import com.example.slathletecare.ui.home.HomeFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -110,6 +111,14 @@ public class QuestionOneActivity extends AppCompatActivity {
                 Intent my= new Intent(QuestionOneActivity.this,ReportingActivity.class);
                 my.putExtra("post",myIntent.getStringExtra("id"));
                 startActivity(my);
+            }
+        });
+        FloatingActionButton fab=findViewById(R.id.f_question_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                QuestionOneActivity.super.onBackPressed();
             }
         });
 
@@ -358,7 +367,7 @@ public class QuestionOneActivity extends AppCompatActivity {
             String x = myIntent.getStringExtra("id");
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(AppConfig.URL_GET_COMMENTS+"id?="+x);
+            String jsonStr = sh.makeServiceCall(AppConfig.URL_GET_COMMENTS+"?id="+x);
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
@@ -366,7 +375,7 @@ public class QuestionOneActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
                     // Getting JSON Array node
-                    JSONArray data = jsonObj.getJSONArray("c");
+                    JSONArray data = jsonObj.getJSONArray("data");
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
                         Comment c= new Comment(st.getString("username"), st.getString("comment"), st.getString("datetime"));

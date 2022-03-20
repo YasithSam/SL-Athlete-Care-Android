@@ -16,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SLAthleteCare"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ForumOneActivity"></activity>
+        <activity
+            android:name=".activity.ProfileImageActivity"
+            android:exported="false" />
+        <activity android:name=".activity.ForumOneActivity" />
         <activity android:name=".activity.ReportingActivity" />
         <activity android:name=".casestudy.AddFeedBackActivity" />
         <activity android:name=".casestudy.FeedbackActivity" />

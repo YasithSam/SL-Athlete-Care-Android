@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.example.slathletecare.R;
 import com.example.slathletecare.activity.CaseStudyActivity;
 import com.example.slathletecare.activity.ForumNewActivity;
 import com.example.slathletecare.activity.InjuryActivity;
+import com.example.slathletecare.activity.ProfileImageActivity;
 import com.example.slathletecare.activity.ScheduleActivity;
 import com.example.slathletecare.databinding.FragmentDashboardBinding;
 import com.example.slathletecare.helper.SessionManager;
@@ -40,6 +42,7 @@ public class DashboardFragment extends Fragment {
     TextView tvInjury;
     Button btn1;
     CardView c,c1,c2,c3,c5,c6;
+    ImageButton imgb;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -54,7 +57,7 @@ public class DashboardFragment extends Fragment {
         HashMap<String, String> user = sessionManager.getUserDetails();
         View root = binding.getRoot();
         tvName=root.findViewById(R.id.tvName);
-        tvSport=root.findViewById(R.id.tvSport);
+
         tvName.setText(user.get(SessionManager.username));
         c=root.findViewById(R.id.cc);
         c1=root.findViewById(R.id.cc2);
@@ -63,6 +66,13 @@ public class DashboardFragment extends Fragment {
         c5=root.findViewById(R.id.cc5);
         c6=root.findViewById(R.id.cc6);
         btn1=root.findViewById(R.id.btnInjury);
+        imgb=root.findViewById(R.id.imageButtonP);
+        imgb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ProfileImageActivity.class));
+            }
+        });
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

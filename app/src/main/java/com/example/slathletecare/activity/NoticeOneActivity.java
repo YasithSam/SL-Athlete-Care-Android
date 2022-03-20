@@ -1,6 +1,7 @@
 package com.example.slathletecare.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompatExtras;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import com.example.slathletecare.R;
 import com.example.slathletecare.app.AppConfig;
 import com.example.slathletecare.app.HttpHandler;
 import com.example.slathletecare.model.Article;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -41,7 +43,7 @@ public class NoticeOneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_one);
-        getSupportActionBar().hide();
+
         recyclerView = (RecyclerView) findViewById(R.id.rv_n_n);
         new NoticeOneActivity.AsyncGetAll().execute();
         mAdapter = new ArticleAdapter(list);
@@ -50,6 +52,7 @@ public class NoticeOneActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(onItemClickListener);
+
     }
     private class AsyncGetAll extends AsyncTask<Void,Void,Void> {
 
@@ -125,9 +128,10 @@ public class NoticeOneActivity extends AppCompatActivity {
             RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
             int position = viewHolder.getAbsoluteAdapterPosition();
             Article cs = list.get(position);
-            Intent myIntent = new Intent(NoticeOneActivity.this, NoticeOneActivity.class);
-            myIntent.putExtra("type",1);
-            myIntent.putExtra("id",position);
+            Intent myIntent = new Intent(NoticeOneActivity.this,NoticeAllActivity.class);
+            myIntent.putExtra("heading",cs.getHeading());
+            myIntent.putExtra("description",cs.getDescription());
+            myIntent.putExtra("url",cs.getUrl());
 
             startActivity(myIntent);
 

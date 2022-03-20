@@ -299,9 +299,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/roboto"
-        android:text="Messages"
+        android:text="Channels"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -365,7 +365,7 @@
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/roboto"
                     android:maxLines="1"
-                    android:text="Join Cricketr Forum"
+                    android:text="Join Cricket Forum"
                     android:textSize="16sp" />
             </LinearLayout>
 

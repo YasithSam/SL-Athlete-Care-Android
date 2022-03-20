@@ -18,12 +18,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     private List<Conversation> conversationList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        //public boolean status;
+        public TextView date;
         public TextView message;
-        //public String imgUrl;
+        public TextView time;
         public MyViewHolder(View itemView) {
             super(itemView);
-            message=(TextView) itemView.findViewById(R.id.t_message);
+            message=(TextView) itemView.findViewById(R.id.text_gchat_message_me);
+            date=(TextView) itemView.findViewById(R.id.text_gchat_date_me);
+            time=(TextView) itemView.findViewById(R.id.text_gchat_timestamp_me);
 
         }
     }
@@ -44,6 +46,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
     public void onBindViewHolder(@NonNull @NotNull MessageAdapter.MyViewHolder holder, int position) {
         Conversation c= conversationList.get(position);
         holder.message.setText(c.getMessage());
+        holder.date.setText(c.getDatetime());
+        holder.time.setText(c.getTime());
 
     }
 

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -86,6 +87,9 @@ public class HomeFragment extends Fragment {
         tv1=root.findViewById(R.id.n_h);
         tv2=root.findViewById(R.id.n_d);
         iv11=root.findViewById(R.id.n_i);
+
+
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override

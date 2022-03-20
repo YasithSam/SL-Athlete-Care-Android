@@ -101,4 +101,6 @@ public class AppConfig {
     public static String URL_GET_MESSAGES=URL_BASE+"/getMessage.php";
     public static String URL_ADD_MESSAGES=URL_BASE+"/addMessage.php";
 
+    public static String URL_MY_SCHEDULES=URL_BASE+"/getMySchedules.php";
+
 }

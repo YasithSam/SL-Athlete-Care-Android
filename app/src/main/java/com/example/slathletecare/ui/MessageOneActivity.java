@@ -228,12 +228,12 @@ public class MessageOneActivity extends AppCompatActivity {
                     JSONArray data = jsonObj.getJSONArray("data");
                     if (data != null) {
                         JSONObject st=data.getJSONObject(0);
-                        Conversation c= new Conversation(st.getString("message"));
+                        Conversation c= new Conversation(st.getString("message"),st.getString("datetime"),st.getString("time"));
                         sList.add(c);
                         int len = data.length();
                         for (int i=1;i<len;i++){
                             JSONObject ct=data.getJSONObject(i);
-                            c=new Conversation(ct.getString("message"));
+                            c=new Conversation(ct.getString("message"),st.getString("datetime"),st.getString("time"));
                             sList.add(c);
                         }
                     }

@@ -6,38 +6,40 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.1515625" />
         <entry key="app/src/main/res/layout/activity_add_feed_back.xml" value="0.22027027027027027" />
         <entry key="app/src/main/res/layout/activity_add_image.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_add_sport.xml" value="0.22027027027027027" />
+        <entry key="app/src/main/res/layout/activity_add_sport.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_advice.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_article_form.xml" value="0.11" />
-        <entry key="app/src/main/res/layout/activity_article_one.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_article_form.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_article_one.xml" value="0.13" />
         <entry key="app/src/main/res/layout/activity_case_study.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_case_study_item.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_comments.xml" value="0.22027027027027027" />
+        <entry key="app/src/main/res/layout/activity_comments.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_diet.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_faactivity.xml" value="0.22027027027027027" />
         <entry key="app/src/main/res/layout/activity_feedback.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_form_details.xml" value="0.14" />
         <entry key="app/src/main/res/layout/activity_forum_new.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_forum_one.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_health.xml" value="0.19504504504504505" />
+        <entry key="app/src/main/res/layout/activity_health.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_health_edit.xml" value="0.1427927927927928" />
         <entry key="app/src/main/res/layout/activity_image.xml" value="0.10277777777777777" />
         <entry key="app/src/main/res/layout/activity_intro.xml" value="0.12567567567567567" />
-        <entry key="app/src/main/res/layout/activity_item_all.xml" value="0.22027027027027027" />
+        <entry key="app/src/main/res/layout/activity_item_all.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22027027027027027" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22027027027027027" />
         <entry key="app/src/main/res/layout/activity_medicine.xml" value="0.17" />
-        <entry key="app/src/main/res/layout/activity_message_one.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_message_one.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_my_article.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_my_details.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_notice_all.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_notice_one.xml" value="0.22027027027027027" />
+        <entry key="app/src/main/res/layout/activity_my_details.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_notice_all.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_notice_one.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_otpactivity.xml" value="0.22027027027027027" />
         <entry key="app/src/main/res/layout/activity_privacy.xml" value="0.22027027027027027" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.22027027027027027" />
+        <entry key="app/src/main/res/layout/activity_profile_image_activity.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/layout/activity_question_all.xml" value="0.1787037037037037" />
         <entry key="app/src/main/res/layout/activity_question_form.xml" value="0.16" />
-        <entry key="app/src/main/res/layout/activity_question_one.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/activity_schedule.xml" value="0.10277777777777777" />
+        <entry key="app/src/main/res/layout/activity_question_one.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/activity_schedule.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_sport.xml" value="0.1427927927927928" />
         <entry key="app/src/main/res/layout/activity_workout.xml" value="0.11" />
         <entry key="app/src/main/res/layout/advice_item.xml" value="0.27207207207207207" />
@@ -46,15 +48,20 @@
         <entry key="app/src/main/res/layout/diet_item.xml" value="0.10277777777777777" />
         <entry key="app/src/main/res/layout/diet_one.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_article.xml" value="0.22027027027027027" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.19504504504504505" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_forum.xml" value="0.19504504504504505" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18153153153153154" />
         <entry key="app/src/main/res/layout/fragment_message_profile.xml" value="0.18153153153153154" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_post.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/layout/fragment_pre.xml" value="0.1675925925925926" />
         <entry key="app/src/main/res/layout/medicine_item.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/message_item.xml" value="0.3355855855855856" />
+        <entry key="app/src/main/res/layout/message_item.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/my_article.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/question_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/workout_item.xml" value="0.10277777777777777" />
         <entry key="app/src/main/res/layout/workout_one.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/search_menu.xml" value="0.16" />
       </map>
     </option>
   </component>
