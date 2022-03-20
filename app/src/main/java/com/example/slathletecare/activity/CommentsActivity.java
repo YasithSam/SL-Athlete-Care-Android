@@ -85,6 +85,14 @@ public class CommentsActivity extends AppCompatActivity {
                 new CommentsActivity.AsyncAddComments().execute(i2,h);
             }
         });
+        FloatingActionButton fab=findViewById(R.id.f_c_back);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                CommentsActivity.super.onBackPressed();
+            }
+        });
 
 
     }
